@@ -83,7 +83,7 @@ jobs:
             -o ./icons/src/commonMain/kotlin \
             -p com.shipsco.lucide_compose \
             -t com.shipsco.theme.AppTheme \
-            ./lucide-icons-raw
+            ./lucide-icons-raw/icons
 
       - name: Clean up downloaded icons
         if: steps.version_check.outputs.needs_update == 'true'
