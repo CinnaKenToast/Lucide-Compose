@@ -60,6 +60,7 @@ jobs:
         if: steps.version_check.outputs.needs_update == 'true'
         run: |
           brew tap dev-tonholo/svg-to-compose
+          brew trust dev-tonholo/svg-to-compose
           brew install s2c
 
       - name: Convert SVGs to Compose ImageVectors
