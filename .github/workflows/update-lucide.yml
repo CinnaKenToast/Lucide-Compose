@@ -20,9 +20,12 @@ jobs:
       - name: Get latest Lucide version from GitHub releases
         id: lucide_latest
         run: |
-          LATEST=$(curl -s https://api.github.com/repos/lucide-icons/lucide/releases/latest \
-            | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")
+          LATEST=$(curl -sI https://github.com/lucide-icons/lucide/releases/latest \
+            | grep -i "^location:" \
+            | sed 's/.*\/tag\///' \
+            | tr -d '[:space:]')
           echo "version=$LATEST" >> "$GITHUB_OUTPUT"
+          echo "Detected version: $LATEST"
 
       - name: Read current tracked version
         id: lucide_current
