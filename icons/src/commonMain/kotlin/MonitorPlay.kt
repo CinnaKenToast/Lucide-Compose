@@ -1,0 +1,166 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+val MonitorPlay: ImageVector
+    get() {
+        val current = _monitorPlay
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.theme.AppTheme.MonitorPlay",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M15.03 9.44 a.65 .65 0 0 1 0 1.12 l-4.06 2.35 A.65 .65 0 0 1 10 12.35 v-4.7 a.65 .65 0 0 1 .97 -.56z M12 17 v4 m-4 0 h8
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 15.03 9.44
+                moveTo(x = 15.03f, y = 9.44f)
+                // a 0.65 0.65 0 0 1 0 1.12
+                arcToRelative(
+                    a = 0.65f,
+                    b = 0.65f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 0.0f,
+                    dy1 = 1.12f,
+                )
+                // l -4.06 2.35
+                lineToRelative(dx = -4.06f, dy = 2.35f)
+                // A 0.65 0.65 0 0 1 10 12.35
+                arcTo(
+                    horizontalEllipseRadius = 0.65f,
+                    verticalEllipseRadius = 0.65f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    x1 = 10.0f,
+                    y1 = 12.35f,
+                )
+                // v -4.7
+                verticalLineToRelative(dy = -4.7f)
+                // a 0.65 0.65 0 0 1 0.97 -0.56z
+                arcToRelative(
+                    a = 0.65f,
+                    b = 0.65f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 0.97f,
+                    dy1 = -0.56f,
+                )
+                close()
+                // M 12 17
+                moveTo(x = 12.0f, y = 17.0f)
+                // v 4
+                verticalLineToRelative(dy = 4.0f)
+                // m -4 0
+                moveToRelative(dx = -4.0f, dy = 0.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
+            }
+            // <rect width="20" height="14" rx="2.0" x="2.0" y="3.0" fill="#000" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                fill = SolidColor(Color(0xFF000000)),
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 2 5
+                moveTo(x = 2.0f, y = 5.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 16
+                horizontalLineToRelative(dx = 16.0f)
+                // a 2 2 0 0 1 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 10
+                verticalLineToRelative(dy = 10.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // h -16
+                horizontalLineToRelative(dx = -16.0f)
+                // a 2 2 0 0 1 -2 -2z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                close()
+            }
+        }.build().also { _monitorPlay = it }
+    }
+
+@Preview
+@Composable
+private fun IconPreview() {
+    com.shipsco.theme.AppTheme {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Image(
+                imageVector = MonitorPlay,
+                contentDescription = null,
+                modifier = Modifier
+                    .width((24.0).dp)
+                    .height((24.0).dp),
+            )
+        }
+    }
+}
+
+@Suppress("ObjectPropertyName")
+private var _monitorPlay: ImageVector? = null

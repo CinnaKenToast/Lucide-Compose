@@ -1,0 +1,77 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+val ArrowDownFromLine: ImageVector
+    get() {
+        val current = _arrowDownFromLine
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.theme.AppTheme.ArrowDownFromLine",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M19 3 H5 m7 18 V7 m-6 8 6 6 6 -6
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 19 3
+                moveTo(x = 19.0f, y = 3.0f)
+                // H 5
+                horizontalLineTo(x = 5.0f)
+                // m 7 18
+                moveToRelative(dx = 7.0f, dy = 18.0f)
+                // V 7
+                verticalLineTo(y = 7.0f)
+                // m -6 8
+                moveToRelative(dx = -6.0f, dy = 8.0f)
+                // l 6 6
+                lineToRelative(dx = 6.0f, dy = 6.0f)
+                // l 6 -6
+                lineToRelative(dx = 6.0f, dy = -6.0f)
+            }
+        }.build().also { _arrowDownFromLine = it }
+    }
+
+@Preview
+@Composable
+private fun IconPreview() {
+    com.shipsco.theme.AppTheme {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Image(
+                imageVector = ArrowDownFromLine,
+                contentDescription = null,
+                modifier = Modifier
+                    .width((24.0).dp)
+                    .height((24.0).dp),
+            )
+        }
+    }
+}
+
+@Suppress("ObjectPropertyName")
+private var _arrowDownFromLine: ImageVector? = null
