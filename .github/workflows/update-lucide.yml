@@ -1,0 +1,93 @@
+name: Update Lucide Icons
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-icons:
+    runs-on: macos-latest # required for Homebrew on the s2c tap
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get latest Lucide version from npm registry
+        id: lucide_latest
+        run: |
+          LATEST=$(curl -s https://registry.npmjs.org/lucide/latest | python3 -c "import sys,json; print(json.load(sys.stdin)['version'])")
+          echo "version=$LATEST" >> "$GITHUB_OUTPUT"
+
+      - name: Read current tracked version
+        id: lucide_current
+        run: |
+          CURRENT=$(cat lucide-version.txt 2>/dev/null || echo "0.0.0")
+          echo "version=$CURRENT" >> "$GITHUB_OUTPUT"
+
+      - name: Compare versions
+        id: version_check
+        run: |
+          LATEST="${{ steps.lucide_latest.outputs.version }}"
+          CURRENT="${{ steps.lucide_current.outputs.version }}"
+          echo "Latest:  $LATEST"
+          echo "Current: $CURRENT"
+          if [ "$LATEST" != "$CURRENT" ]; then
+            echo "needs_update=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "needs_update=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Node.js
+        if: steps.version_check.outputs.needs_update == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install svgo (required for SVG optimization)
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: npm install -g svgo
+
+      - name: Install latest Lucide icons
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: npm install lucide@latest
+
+      - name: Install s2c via Homebrew
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: |
+          brew tap dev-tonholo/svg-to-compose
+          brew install s2c
+
+      - name: Convert SVGs to Compose ImageVectors
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: |
+          s2c \
+            -o ./icons/src/commonMain/kotlin \
+            -p com.shipsco.lucide_compose \
+            -t com.shipsco.theme.AppTheme \
+            ./node_modules/lucide/icons
+
+      - name: Update tracked version file
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: echo "${{ steps.lucide_latest.outputs.version }}" > lucide-version.txt
+
+      - name: Create Pull Request
+        if: steps.version_check.outputs.needs_update == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update Lucide icons to v${{ steps.lucide_latest.outputs.version }}"
+          branch: "lucide-update/v${{ steps.lucide_latest.outputs.version }}"
+          title: "chore: update Lucide icons to v${{ steps.lucide_latest.outputs.version }}"
+          body: |
+            Automated update of Lucide Icons.
+
+            - **Previous version:** `${{ steps.lucide_current.outputs.version }}`
+            - **New version:** `${{ steps.lucide_latest.outputs.version }}`
+
+            Lucide changelog: https://github.com/lucide-icons/lucide/releases
+          labels: dependencies, automated
