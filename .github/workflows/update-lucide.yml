@@ -11,16 +11,17 @@ permissions:
 
 jobs:
   update-icons:
-    runs-on: macos-latest # required for Homebrew on the s2c tap
+    runs-on: macos-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get latest Lucide version from npm registry
+      - name: Get latest Lucide version from GitHub releases
         id: lucide_latest
         run: |
-          LATEST=$(curl -s https://registry.npmjs.org/lucide/latest | python3 -c "import sys,json; print(json.load(sys.stdin)['version'])")
+          LATEST=$(curl -s https://api.github.com/repos/lucide-icons/lucide/releases/latest \
+            | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")
           echo "version=$LATEST" >> "$GITHUB_OUTPUT"
 
       - name: Read current tracked version
@@ -42,6 +43,22 @@ jobs:
             echo "needs_update=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Download Lucide icons zip
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: |
+          VERSION="${{ steps.lucide_latest.outputs.version }}"
+          curl -L \
+            "https://github.com/lucide-icons/lucide/releases/download/${VERSION}/lucide-icons-${VERSION}.zip" \
+            -o lucide-icons.zip
+
+      - name: Unzip and clean icons
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: |
+          unzip -o lucide-icons.zip -d lucide-icons-raw
+          # remove json files, keep only SVGs
+          find lucide-icons-raw -name "*.json" -delete
+          rm lucide-icons.zip
+
       - name: Set up Node.js
         if: steps.version_check.outputs.needs_update == 'true'
         uses: actions/setup-node@v4
@@ -51,10 +68,6 @@ jobs:
       - name: Install svgo (required for SVG optimization)
         if: steps.version_check.outputs.needs_update == 'true'
         run: npm install -g svgo
-
-      - name: Install latest Lucide icons
-        if: steps.version_check.outputs.needs_update == 'true'
-        run: npm install lucide@latest
 
       - name: Install s2c via Homebrew
         if: steps.version_check.outputs.needs_update == 'true'
@@ -70,7 +83,11 @@ jobs:
             -o ./icons/src/commonMain/kotlin \
             -p com.shipsco.lucide_compose \
             -t com.shipsco.theme.AppTheme \
-            ./node_modules/lucide/icons
+            ./lucide-icons-raw
+
+      - name: Clean up downloaded icons
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: rm -rf lucide-icons-raw
 
       - name: Update tracked version file
         if: steps.version_check.outputs.needs_update == 'true'
@@ -81,14 +98,14 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update Lucide icons to v${{ steps.lucide_latest.outputs.version }}"
-          branch: "lucide-update/v${{ steps.lucide_latest.outputs.version }}"
-          title: "chore: update Lucide icons to v${{ steps.lucide_latest.outputs.version }}"
+          commit-message: "chore: update Lucide icons to ${{ steps.lucide_latest.outputs.version }}"
+          branch: "lucide-update/${{ steps.lucide_latest.outputs.version }}"
+          title: "chore: update Lucide icons to ${{ steps.lucide_latest.outputs.version }}"
           body: |
             Automated update of Lucide Icons.
 
             - **Previous version:** `${{ steps.lucide_current.outputs.version }}`
             - **New version:** `${{ steps.lucide_latest.outputs.version }}`
 
-            Lucide changelog: https://github.com/lucide-icons/lucide/releases
+            Lucide changelog: https://github.com/lucide-icons/lucide/releases/tag/${{ steps.lucide_latest.outputs.version }}
           labels: dependencies, automated
