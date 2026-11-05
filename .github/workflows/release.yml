@@ -1,0 +1,128 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version in MAJOR.MINOR.PATCH format, for example 0.1.0
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android platform
+        run: |
+          compile_sdk="$(sed -nE 's/^android-compileSdk = "([0-9]+)"$/\1/p' gradle/libs.versions.toml)"
+          sdkmanager "platforms;android-$compile_sdk"
+
+      - name: Prepare release branch and tag
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+
+          if [[ ! "$RELEASE_VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            echo "Version must use MAJOR.MINOR.PATCH format, without a leading v."
+            exit 1
+          fi
+
+          branch="release/$RELEASE_VERSION"
+          tag="v$RELEASE_VERSION"
+          git fetch origin main --tags
+
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            git fetch origin "refs/heads/$branch:refs/remotes/origin/$branch"
+            git switch --create "$branch" --track "origin/$branch"
+          else
+            git switch --create "$branch" origin/main
+            RELEASE_VERSION="$RELEASE_VERSION" python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          version = os.environ["RELEASE_VERSION"]
+          build_file = Path("icons/build.gradle.kts")
+          build_text = build_file.read_text()
+          updated_build_text, build_count = re.subn(
+              r'(?m)^version = "[^"]+"$',
+              f'version = "{version}"',
+              build_text,
+              count=1,
+          )
+          if build_count != 1:
+              raise SystemExit("Could not find the library version in icons/build.gradle.kts")
+          build_file.write_text(updated_build_text)
+
+          readme = Path("README.md")
+          readme_text = readme.read_text()
+          coordinate_pattern = r'(io\.github\.cinnakentoast:lucide-icons:)[0-9]+\.[0-9]+\.[0-9]+'
+          updated_readme, readme_count = re.subn(
+              coordinate_pattern,
+              rf'\g<1>{version}',
+              readme_text,
+          )
+          if readme_count == 0:
+              raise SystemExit("Could not find the dependency examples in README.md")
+          readme.write_text(updated_readme)
+          PY
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            if ! git diff --quiet; then
+              git add icons/build.gradle.kts README.md
+              git commit -m "chore: prepare release $RELEASE_VERSION"
+            fi
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+
+          actual_version="$(sed -nE 's/^version = "([^"]+)"$/\1/p' icons/build.gradle.kts)"
+          if [[ "$actual_version" != "$RELEASE_VERSION" ]]; then
+            echo "Release branch has version $actual_version, expected $RELEASE_VERSION."
+            exit 1
+          fi
+
+          if git show-ref --verify --quiet "refs/tags/$tag"; then
+            tag_commit="$(git rev-parse "$tag^{commit}")"
+            if [[ "$tag_commit" != "$(git rev-parse HEAD)" ]]; then
+              echo "Tag $tag already exists at a different commit."
+              exit 1
+            fi
+          else
+            git tag -a "$tag" -m "Release $RELEASE_VERSION"
+          fi
+
+          git push origin "refs/tags/$tag"
+
+      - name: Publish and release to Maven Central
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_IN_MEMORY_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_IN_MEMORY_KEY_PASSWORD }}
+        run: ./gradlew :icons:publishAndReleaseToMavenCentral --no-configuration-cache
