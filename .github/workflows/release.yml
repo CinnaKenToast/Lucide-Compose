@@ -41,7 +41,7 @@ jobs:
       - name: Install Android platform
         run: |
           compile_sdk="$(sed -nE 's/^android-compileSdk = "([0-9]+)"$/\1/p' gradle/libs.versions.toml)"
-          sdkmanager "platforms;android-$compile_sdk"
+          android sdk install --canary "platforms/android-$compile_sdk"
 
       - name: Prepare release branch and tag
         env:
