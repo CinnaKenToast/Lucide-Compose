@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 6 * * *" # daily at 06:00 UTC
   workflow_dispatch:
+    inputs:
+      force_regenerate:
+        description: Regenerate icons even if the version is unchanged
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -35,12 +41,14 @@ jobs:
 
       - name: Compare versions
         id: version_check
+        env:
+          FORCE_REGENERATE: ${{ inputs.force_regenerate }}
         run: |
           LATEST="${{ steps.lucide_latest.outputs.version }}"
           CURRENT="${{ steps.lucide_current.outputs.version }}"
           echo "Latest:  $LATEST"
           echo "Current: $CURRENT"
-          if [ "$LATEST" != "$CURRENT" ]; then
+          if [ "$LATEST" != "$CURRENT" ] || [ "$FORCE_REGENERATE" = "true" ]; then
             echo "needs_update=true" >> "$GITHUB_OUTPUT"
           else
             echo "needs_update=false" >> "$GITHUB_OUTPUT"
@@ -62,16 +70,6 @@ jobs:
           find lucide-icons-raw -name "*.json" -delete
           rm lucide-icons.zip
 
-      - name: Set up Node.js
-        if: steps.version_check.outputs.needs_update == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install svgo (required for SVG optimization)
-        if: steps.version_check.outputs.needs_update == 'true'
-        run: npm install -g svgo
-
       - name: Install s2c via Homebrew
         if: steps.version_check.outputs.needs_update == 'true'
         run: |
@@ -85,6 +83,7 @@ jobs:
           s2c \
             -o ./icons/src/commonMain/kotlin \
             -p com.shipsco.lucide_compose \
+            -opt false \
             --no-preview \
             --kmp=true \
             ./lucide-icons-raw/icons
