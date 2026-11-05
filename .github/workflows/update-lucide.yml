@@ -151,6 +151,34 @@ jobs:
         if: steps.version_check.outputs.needs_update == 'true'
         run: echo "${{ steps.lucide_latest.outputs.version }}" > lucide-version.txt
 
+      - name: Update README upstream version
+        if: steps.version_check.outputs.needs_update == 'true'
+        env:
+          VERSION: ${{ steps.lucide_latest.outputs.version }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          readme = Path("README.md")
+          text = readme.read_text()
+          pattern = (
+              r"\[Lucide [0-9]+\.[0-9]+\.[0-9]+\]"
+              r"\(https://github\.com/lucide-icons/lucide/releases/tag/"
+              r"[0-9]+\.[0-9]+\.[0-9]+\)"
+          )
+          version = os.environ["VERSION"]
+          replacement = (
+              f"[Lucide {version}]"
+              f"(https://github.com/lucide-icons/lucide/releases/tag/{version})"
+          )
+          updated_text, count = re.subn(pattern, replacement, text)
+          if count != 1:
+              raise SystemExit("Could not find the upstream Lucide version line in README.md")
+          readme.write_text(updated_text)
+          PY
+
       - name: Create Pull Request
         if: steps.version_check.outputs.needs_update == 'true'
         uses: peter-evans/create-pull-request@v6
