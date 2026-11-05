@@ -138,6 +138,15 @@ jobs:
         if: steps.version_check.outputs.needs_update == 'true'
         run: rm -rf lucide-icons-raw
 
+      - name: Update Lucide license notices
+        if: steps.version_check.outputs.needs_update == 'true'
+        env:
+          VERSION: ${{ steps.lucide_latest.outputs.version }}
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/lucide-icons/lucide/${VERSION}/LICENSE" \
+            -o THIRD_PARTY_NOTICES.md
+
       - name: Update tracked version file
         if: steps.version_check.outputs.needs_update == 'true'
         run: echo "${{ steps.lucide_latest.outputs.version }}" > lucide-version.txt

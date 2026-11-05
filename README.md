@@ -1,46 +1,74 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
+# Lucide Compose
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Lucide Compose provides the Lucide icon set as Compose Multiplatform `ImageVector`
+values. Icons are exposed as extensions on `Lucide`, for example `Lucide.Mail`.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## Installation
 
-### Running the apps
+Add Maven Central to the repositories in your project's `settings.gradle.kts`:
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+```
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
-- Web app:
-  - Wasm target (faster, modern browsers): `./gradlew :webApp:wasmJsBrowserDevelopmentRun`
-  - JS target (slower, supports older browsers): `./gradlew :webApp:jsBrowserDevelopmentRun`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+Add the library to the source set or module that uses it. For a Kotlin Multiplatform
+project:
 
-### Running tests
+```kotlin
+commonMain.dependencies {
+    implementation("io.github.cinnakentoast:lucide-icons:0.1.0")
+}
+```
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+For an Android Compose project:
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
-- Web tests:
-  - Wasm target: `./gradlew :shared:wasmJsTest`
-  - JS target: `./gradlew :shared:jsTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
+```kotlin
+dependencies {
+    implementation("io.github.cinnakentoast:lucide-icons:0.1.0")
+}
+```
 
----
+The Maven Central coordinate will be usable after the first release is published.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://kotlinlang.org/compose-multiplatform/),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## Usage
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+```kotlin
+import androidx.compose.material3.Icon
+import com.shipsco.lucide_compose.Lucide
+import com.shipsco.lucide_compose.Mail
+
+Icon(
+    imageVector = Lucide.Mail,
+    contentDescription = "Mail"
+)
+```
+
+The icons are `ImageVector` values, so they work with Compose's standard `Icon`
+composable and its sizing, tint, and accessibility parameters.
+
+## Supported targets
+
+The library publishes Android, iOS, JVM, JavaScript, and WebAssembly variants. Use
+Compose Multiplatform on each target. Native SwiftUI code cannot directly consume
+Compose `ImageVector` values.
+
+## Lucide icon updates
+
+The generated icon sources are updated from upstream Lucide releases by the
+repository's GitHub Actions workflow. Avoid editing generated icon files by hand.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development and pull request guidance.
+Contributors are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+Original project code is available under the [MIT License](LICENSE). Generated
+Lucide icons retain their upstream license terms; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
