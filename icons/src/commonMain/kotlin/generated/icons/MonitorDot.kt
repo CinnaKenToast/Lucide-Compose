@@ -1,0 +1,116 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.MonitorDot: ImageVector
+    get() {
+        val current = _monitorDot
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.MonitorDot",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M12 17 v4 m10 -8.7 V15 a2 2 0 0 1 -2 2 H4 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 h8.7 M8 21 h8
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 12 17
+                moveTo(x = 12.0f, y = 17.0f)
+                // v 4
+                verticalLineToRelative(dy = 4.0f)
+                // m 10 -8.7
+                moveToRelative(dx = 10.0f, dy = -8.7f)
+                // V 15
+                verticalLineTo(y = 15.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // H 4
+                horizontalLineTo(x = 4.0f)
+                // a 2 2 0 0 1 -2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                // V 5
+                verticalLineTo(y = 5.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 8.7
+                horizontalLineToRelative(dx = 8.7f)
+                // M 8 21
+                moveTo(x = 8.0f, y = 21.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
+            }
+            // <circle cx="19.0" cy="6.0" radius="3.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 19 6
+                moveTo(x = 19.0f, y = 6.0f)
+                // m -3 0
+                moveToRelative(dx = -3.0f, dy = 0.0f)
+                // a 3 3 0 1 1 6 0
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = 6.0f,
+                    dy1 = 0.0f,
+                )
+                // a 3 3 0 1 1 -6 0z
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = -6.0f,
+                    dy1 = 0.0f,
+                )
+                close()
+            }
+        }.build().also { _monitorDot = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _monitorDot: ImageVector? = null

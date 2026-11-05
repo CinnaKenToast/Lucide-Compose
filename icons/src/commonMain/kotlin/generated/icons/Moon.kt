@@ -1,0 +1,75 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.Moon: ImageVector
+    get() {
+        val current = _moon
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.Moon",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M20.99 12.49 A9 9 0 1 1 11.5 3 c.4 -.02 .62 .46 .4 .8 a6 6 0 0 0 8.27 8.28 c.35 -.22 .83 0 .8 .4
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 20.99 12.49
+                moveTo(x = 20.99f, y = 12.49f)
+                // A 9 9 0 1 1 11.5 3
+                arcTo(
+                    horizontalEllipseRadius = 9.0f,
+                    verticalEllipseRadius = 9.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    x1 = 11.5f,
+                    y1 = 3.0f,
+                )
+                // c 0.4 -0.02 0.62 0.46 0.4 0.8
+                curveToRelative(
+                    dx1 = 0.4f,
+                    dy1 = -0.02f,
+                    dx2 = 0.62f,
+                    dy2 = 0.46f,
+                    dx3 = 0.4f,
+                    dy3 = 0.8f,
+                )
+                // a 6 6 0 0 0 8.27 8.28
+                arcToRelative(
+                    a = 6.0f,
+                    b = 6.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 8.27f,
+                    dy1 = 8.28f,
+                )
+                // c 0.35 -0.22 0.83 0 0.8 0.4
+                curveToRelative(
+                    dx1 = 0.35f,
+                    dy1 = -0.22f,
+                    dx2 = 0.83f,
+                    dy2 = 0.0f,
+                    dx3 = 0.8f,
+                    dy3 = 0.4f,
+                )
+            }
+        }.build().also { _moon = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _moon: ImageVector? = null

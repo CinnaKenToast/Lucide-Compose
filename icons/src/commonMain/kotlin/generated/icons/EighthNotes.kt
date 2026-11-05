@@ -1,0 +1,129 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.EighthNotes: ImageVector
+    get() {
+        val current = _eighthNotes
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.EighthNotes",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M21 16 V3 a1 1 0 0 0 -1.28 -.96 l-10 2.92 A1 1 0 0 0 9 5.92 V19
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 21 16
+                moveTo(x = 21.0f, y = 16.0f)
+                // V 3
+                verticalLineTo(y = 3.0f)
+                // a 1 1 0 0 0 -1.28 -0.96
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -1.28f,
+                    dy1 = -0.96f,
+                )
+                // l -10 2.92
+                lineToRelative(dx = -10.0f, dy = 2.92f)
+                // A 1 1 0 0 0 9 5.92
+                arcTo(
+                    horizontalEllipseRadius = 1.0f,
+                    verticalEllipseRadius = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    x1 = 9.0f,
+                    y1 = 5.92f,
+                )
+                // V 19
+                verticalLineTo(y = 19.0f)
+            }
+            // <circle cx="18.0" cy="16.0" radius="3.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 18 16
+                moveTo(x = 18.0f, y = 16.0f)
+                // m -3 0
+                moveToRelative(dx = -3.0f, dy = 0.0f)
+                // a 3 3 0 1 1 6 0
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = 6.0f,
+                    dy1 = 0.0f,
+                )
+                // a 3 3 0 1 1 -6 0z
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = -6.0f,
+                    dy1 = 0.0f,
+                )
+                close()
+            }
+            // <circle cx="6.0" cy="19.0" radius="3.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 6 19
+                moveTo(x = 6.0f, y = 19.0f)
+                // m -3 0
+                moveToRelative(dx = -3.0f, dy = 0.0f)
+                // a 3 3 0 1 1 6 0
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = 6.0f,
+                    dy1 = 0.0f,
+                )
+                // a 3 3 0 1 1 -6 0z
+                arcToRelative(
+                    a = 3.0f,
+                    b = 3.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = -6.0f,
+                    dy1 = 0.0f,
+                )
+                close()
+            }
+        }.build().also { _eighthNotes = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _eighthNotes: ImageVector? = null

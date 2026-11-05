@@ -1,0 +1,112 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.CarBattery: ImageVector
+    get() {
+        val current = _carBattery
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.CarBattery",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M14 13 h4 m-2 2 v-4 m2 -6 v2 M6 13 h4 M6 5 v2
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 14 13
+                moveTo(x = 14.0f, y = 13.0f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // m -2 2
+                moveToRelative(dx = -2.0f, dy = 2.0f)
+                // v -4
+                verticalLineToRelative(dy = -4.0f)
+                // m 2 -6
+                moveToRelative(dx = 2.0f, dy = -6.0f)
+                // v 2
+                verticalLineToRelative(dy = 2.0f)
+                // M 6 13
+                moveTo(x = 6.0f, y = 13.0f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // M 6 5
+                moveTo(x = 6.0f, y = 5.0f)
+                // v 2
+                verticalLineToRelative(dy = 2.0f)
+            }
+            // <rect width="20" height="12" rx="2.0" x="2.0" y="7.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 2 9
+                moveTo(x = 2.0f, y = 9.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 16
+                horizontalLineToRelative(dx = 16.0f)
+                // a 2 2 0 0 1 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 8
+                verticalLineToRelative(dy = 8.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // h -16
+                horizontalLineToRelative(dx = -16.0f)
+                // a 2 2 0 0 1 -2 -2z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                close()
+            }
+        }.build().also { _carBattery = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _carBattery: ImageVector? = null

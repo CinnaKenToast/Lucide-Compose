@@ -1,0 +1,152 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.FileKey: ImageVector
+    get() {
+        val current = _fileKey
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.FileKey",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M14 2 v5 a1 1 0 0 0 1 1 h5 M4 12 v6 m0 -4 h2
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 14 2
+                moveTo(x = 14.0f, y = 2.0f)
+                // v 5
+                verticalLineToRelative(dy = 5.0f)
+                // a 1 1 0 0 0 1 1
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 1.0f,
+                    dy1 = 1.0f,
+                )
+                // h 5
+                horizontalLineToRelative(dx = 5.0f)
+                // M 4 12
+                moveTo(x = 4.0f, y = 12.0f)
+                // v 6
+                verticalLineToRelative(dy = 6.0f)
+                // m 0 -4
+                moveToRelative(dx = 0.0f, dy = -4.0f)
+                // h 2
+                horizontalLineToRelative(dx = 2.0f)
+            }
+            // M9.65 22 H18 a2 2 0 0 0 2 -2 V8 a2.4 2.4 0 0 0 -.7 -1.7 l-3.6 -3.6 A2.4 2.4 0 0 0 14 2 H6 a2 2 0 0 0 -2 2 v4
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 9.65 22
+                moveTo(x = 9.65f, y = 22.0f)
+                // H 18
+                horizontalLineTo(x = 18.0f)
+                // a 2 2 0 0 0 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // V 8
+                verticalLineTo(y = 8.0f)
+                // a 2.4 2.4 0 0 0 -0.7 -1.7
+                arcToRelative(
+                    a = 2.4f,
+                    b = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -0.7f,
+                    dy1 = -1.7f,
+                )
+                // l -3.6 -3.6
+                lineToRelative(dx = -3.6f, dy = -3.6f)
+                // A 2.4 2.4 0 0 0 14 2
+                arcTo(
+                    horizontalEllipseRadius = 2.4f,
+                    verticalEllipseRadius = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    x1 = 14.0f,
+                    y1 = 2.0f,
+                )
+                // H 6
+                horizontalLineTo(x = 6.0f)
+                // a 2 2 0 0 0 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 4
+                verticalLineToRelative(dy = 4.0f)
+            }
+            // <circle cx="4.0" cy="20.0" radius="2.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 4 20
+                moveTo(x = 4.0f, y = 20.0f)
+                // m -2 0
+                moveToRelative(dx = -2.0f, dy = 0.0f)
+                // a 2 2 0 1 1 4 0
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = 4.0f,
+                    dy1 = 0.0f,
+                )
+                // a 2 2 0 1 1 -4 0z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    dx1 = -4.0f,
+                    dy1 = 0.0f,
+                )
+                close()
+            }
+        }.build().also { _fileKey = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _fileKey: ImageVector? = null

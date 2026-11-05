@@ -70,6 +70,24 @@ jobs:
           find lucide-icons-raw -name "*.json" -delete
           rm lucide-icons.zip
 
+      - name: Set up Node.js
+        if: steps.version_check.outputs.needs_update == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install svgo
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: npm install -g svgo
+
+      - name: Preserve SVG fill semantics
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: python3 .github/scripts/prepare-lucide-svgs.py ./lucide-icons-raw/icons
+
+      - name: Clear previous generated icon sources
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: rm -rf ./icons/src/commonMain/kotlin/generated
+
       - name: Install s2c via Homebrew
         if: steps.version_check.outputs.needs_update == 'true'
         run: |
@@ -81,14 +99,40 @@ jobs:
         if: steps.version_check.outputs.needs_update == 'true'
         run: |
           s2c \
-            -o ./icons/src/commonMain/kotlin \
+            -o ./icons/src/commonMain/kotlin/generated/icons \
             -p com.shipsco.lucide_compose \
             -t com.shipsco.lucide_compose.Lucide \
-            -opt false \
+            -opt true \
             -rt Lucide \
             --no-preview \
             --kmp=true \
             ./lucide-icons-raw/icons
+
+      - name: Convert case-colliding icons
+        if: steps.version_check.outputs.needs_update == 'true'
+        run: |
+          collision_index=0
+          for icon in ./lucide-icons-raw/icon-name-collisions/*/*.svg; do
+            if [ ! -f "$icon" ]; then
+              continue
+            fi
+            collision_index=$((collision_index + 1))
+            icon_name="$(basename "$icon" .svg)"
+            temporary_output="./lucide-icons-raw/generated/$icon_name"
+            s2c \
+              -o "$temporary_output" \
+              -p com.shipsco.lucide_compose \
+              -t com.shipsco.lucide_compose.Lucide \
+              -opt true \
+              -rt Lucide \
+              --no-preview \
+              --kmp=true \
+              "$icon"
+            generated_file="$(find "$temporary_output" -type f -name "*.kt" -print -quit)"
+            mkdir -p ./icons/src/commonMain/kotlin/generated/case-collisions
+            mv "$generated_file" \
+              "./icons/src/commonMain/kotlin/generated/case-collisions/LucideCaseCollision${collision_index}.kt"
+          done
 
       - name: Clean up downloaded icons
         if: steps.version_check.outputs.needs_update == 'true'

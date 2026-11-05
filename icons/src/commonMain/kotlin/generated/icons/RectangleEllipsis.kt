@@ -1,0 +1,102 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.RectangleEllipsis: ImageVector
+    get() {
+        val current = _rectangleEllipsis
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.RectangleEllipsis",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // <rect width="20" height="12" rx="2.0" x="2.0" y="6.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 2 8
+                moveTo(x = 2.0f, y = 8.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 16
+                horizontalLineToRelative(dx = 16.0f)
+                // a 2 2 0 0 1 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 8
+                verticalLineToRelative(dy = 8.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // h -16
+                horizontalLineToRelative(dx = -16.0f)
+                // a 2 2 0 0 1 -2 -2z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                close()
+            }
+            // M12 12z M17 12 h.01 M7 12z
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 12 12z
+                moveTo(x = 12.0f, y = 12.0f)
+                close()
+                // M 17 12
+                moveTo(x = 17.0f, y = 12.0f)
+                // h 0.01
+                horizontalLineToRelative(dx = 0.01f)
+                // M 7 12z
+                moveTo(x = 7.0f, y = 12.0f)
+                close()
+            }
+        }.build().also { _rectangleEllipsis = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _rectangleEllipsis: ImageVector? = null

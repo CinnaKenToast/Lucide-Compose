@@ -1,0 +1,122 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.CalendarFold: ImageVector
+    get() {
+        val current = _calendarFold
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.CalendarFold",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M16 2 v3 m5 10 V5 a2 2 0 0 0 -2 -2 H5 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h10 v-5 a1 1 0 0 1 1 -1z a2.4 2.4 0 0 1 -.7 1.7 l-3.6 3.6 A2.4 2.4 0 0 1 15 21 M3 9 h18 M8 2 v3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 16 2
+                moveTo(x = 16.0f, y = 2.0f)
+                // v 3
+                verticalLineToRelative(dy = 3.0f)
+                // m 5 10
+                moveToRelative(dx = 5.0f, dy = 10.0f)
+                // V 5
+                verticalLineTo(y = 5.0f)
+                // a 2 2 0 0 0 -2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                // H 5
+                horizontalLineTo(x = 5.0f)
+                // a 2 2 0 0 0 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 14
+                verticalLineToRelative(dy = 14.0f)
+                // a 2 2 0 0 0 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // h 10
+                horizontalLineToRelative(dx = 10.0f)
+                // v -5
+                verticalLineToRelative(dy = -5.0f)
+                // a 1 1 0 0 1 1 -1z
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 1.0f,
+                    dy1 = -1.0f,
+                )
+                close()
+                // a 2.4 2.4 0 0 1 -0.7 1.7
+                arcToRelative(
+                    a = 2.4f,
+                    b = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -0.7f,
+                    dy1 = 1.7f,
+                )
+                // l -3.6 3.6
+                lineToRelative(dx = -3.6f, dy = 3.6f)
+                // A 2.4 2.4 0 0 1 15 21
+                arcTo(
+                    horizontalEllipseRadius = 2.4f,
+                    verticalEllipseRadius = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    x1 = 15.0f,
+                    y1 = 21.0f,
+                )
+                // M 3 9
+                moveTo(x = 3.0f, y = 9.0f)
+                // h 18
+                horizontalLineToRelative(dx = 18.0f)
+                // M 8 2
+                moveTo(x = 8.0f, y = 2.0f)
+                // v 3
+                verticalLineToRelative(dy = 3.0f)
+            }
+        }.build().also { _calendarFold = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _calendarFold: ImageVector? = null

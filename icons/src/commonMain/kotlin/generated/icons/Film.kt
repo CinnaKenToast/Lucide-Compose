@@ -1,0 +1,120 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.Film: ImageVector
+    get() {
+        val current = _film
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.Film",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // <rect width="18" height="18" rx="2.0" x="3.0" y="3.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 3 5
+                moveTo(x = 3.0f, y = 5.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 14
+                horizontalLineToRelative(dx = 14.0f)
+                // a 2 2 0 0 1 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 14
+                verticalLineToRelative(dy = 14.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // h -14
+                horizontalLineToRelative(dx = -14.0f)
+                // a 2 2 0 0 1 -2 -2z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                close()
+            }
+            // M7 3 v18 M3 7.5 h4 M3 12 h18 M3 16.5 h4 M17 3 v18 m0 -13.5 h4 m-4 9 h4
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 7 3
+                moveTo(x = 7.0f, y = 3.0f)
+                // v 18
+                verticalLineToRelative(dy = 18.0f)
+                // M 3 7.5
+                moveTo(x = 3.0f, y = 7.5f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // M 3 12
+                moveTo(x = 3.0f, y = 12.0f)
+                // h 18
+                horizontalLineToRelative(dx = 18.0f)
+                // M 3 16.5
+                moveTo(x = 3.0f, y = 16.5f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // M 17 3
+                moveTo(x = 17.0f, y = 3.0f)
+                // v 18
+                verticalLineToRelative(dy = 18.0f)
+                // m 0 -13.5
+                moveToRelative(dx = 0.0f, dy = -13.5f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // m -4 9
+                moveToRelative(dx = -4.0f, dy = 9.0f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+            }
+        }.build().also { _film = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _film: ImageVector? = null

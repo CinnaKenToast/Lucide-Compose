@@ -1,0 +1,108 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.Funnel: ImageVector
+    get() {
+        val current = _funnel
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.Funnel",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M10 20 a1 1 0 0 0 .55 .9 l2 1 A1 1 0 0 0 14 21 v-7 a2 2 0 0 1 .52 -1.34 l7.22 -7.99 A1 1 0 0 0 21 3 H3 a1 1 0 0 0 -.74 1.67 l7.22 7.99 A2 2 0 0 1 10 14z
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 10 20
+                moveTo(x = 10.0f, y = 20.0f)
+                // a 1 1 0 0 0 0.55 0.9
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 0.55f,
+                    dy1 = 0.9f,
+                )
+                // l 2 1
+                lineToRelative(dx = 2.0f, dy = 1.0f)
+                // A 1 1 0 0 0 14 21
+                arcTo(
+                    horizontalEllipseRadius = 1.0f,
+                    verticalEllipseRadius = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    x1 = 14.0f,
+                    y1 = 21.0f,
+                )
+                // v -7
+                verticalLineToRelative(dy = -7.0f)
+                // a 2 2 0 0 1 0.52 -1.34
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 0.52f,
+                    dy1 = -1.34f,
+                )
+                // l 7.22 -7.99
+                lineToRelative(dx = 7.22f, dy = -7.99f)
+                // A 1 1 0 0 0 21 3
+                arcTo(
+                    horizontalEllipseRadius = 1.0f,
+                    verticalEllipseRadius = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    x1 = 21.0f,
+                    y1 = 3.0f,
+                )
+                // H 3
+                horizontalLineTo(x = 3.0f)
+                // a 1 1 0 0 0 -0.74 1.67
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -0.74f,
+                    dy1 = 1.67f,
+                )
+                // l 7.22 7.99
+                lineToRelative(dx = 7.22f, dy = 7.99f)
+                // A 2 2 0 0 1 10 14z
+                arcTo(
+                    horizontalEllipseRadius = 2.0f,
+                    verticalEllipseRadius = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    x1 = 10.0f,
+                    y1 = 14.0f,
+                )
+                close()
+            }
+        }.build().also { _funnel = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _funnel: ImageVector? = null

@@ -1,0 +1,156 @@
+package com.shipsco.lucide_compose
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Lucide.Sofa: ImageVector
+    get() {
+        val current = _sofa
+        if (current != null) return current
+
+        return ImageVector.Builder(
+            name = "com.shipsco.lucide_compose.Lucide.Sofa",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f,
+        ).apply {
+            // M20 9 V6 a2 2 0 0 0 -2 -2 H6 a2 2 0 0 0 -2 2 v3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 20 9
+                moveTo(x = 20.0f, y = 9.0f)
+                // V 6
+                verticalLineTo(y = 6.0f)
+                // a 2 2 0 0 0 -2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
+                )
+                // H 6
+                horizontalLineTo(x = 6.0f)
+                // a 2 2 0 0 0 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 3
+                verticalLineToRelative(dy = 3.0f)
+            }
+            // M2 16 a2 2 0 0 0 2 2 h16 a2 2 0 0 0 2 -2 v-5 a2 2 0 0 0 -4 0 v1.5 a.5 .5 0 0 1 -.5 .5 h-11 A.5 .5 0 0 1 6 12.5 V11 a2 2 0 0 0 -4 0z m2 2 v2 m16 -2 v2 M12 4 v9
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 2 16
+                moveTo(x = 2.0f, y = 16.0f)
+                // a 2 2 0 0 0 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // h 16
+                horizontalLineToRelative(dx = 16.0f)
+                // a 2 2 0 0 0 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // v -5
+                verticalLineToRelative(dy = -5.0f)
+                // a 2 2 0 0 0 -4 0
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -4.0f,
+                    dy1 = 0.0f,
+                )
+                // v 1.5
+                verticalLineToRelative(dy = 1.5f)
+                // a 0.5 0.5 0 0 1 -0.5 0.5
+                arcToRelative(
+                    a = 0.5f,
+                    b = 0.5f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -0.5f,
+                    dy1 = 0.5f,
+                )
+                // h -11
+                horizontalLineToRelative(dx = -11.0f)
+                // A 0.5 0.5 0 0 1 6 12.5
+                arcTo(
+                    horizontalEllipseRadius = 0.5f,
+                    verticalEllipseRadius = 0.5f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    x1 = 6.0f,
+                    y1 = 12.5f,
+                )
+                // V 11
+                verticalLineTo(y = 11.0f)
+                // a 2 2 0 0 0 -4 0z
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -4.0f,
+                    dy1 = 0.0f,
+                )
+                close()
+                // m 2 2
+                moveToRelative(dx = 2.0f, dy = 2.0f)
+                // v 2
+                verticalLineToRelative(dy = 2.0f)
+                // m 16 -2
+                moveToRelative(dx = 16.0f, dy = -2.0f)
+                // v 2
+                verticalLineToRelative(dy = 2.0f)
+                // M 12 4
+                moveTo(x = 12.0f, y = 4.0f)
+                // v 9
+                verticalLineToRelative(dy = 9.0f)
+            }
+        }.build().also { _sofa = it }
+    }
+
+@Suppress("ObjectPropertyName")
+private var _sofa: ImageVector? = null
