@@ -85,7 +85,8 @@ jobs:
           s2c \
             -o ./icons/src/commonMain/kotlin \
             -p com.shipsco.lucide_compose \
-            -t com.shipsco.theme.AppTheme \
+            --no-preview \
+            --kmp=true \
             ./lucide-icons-raw/icons
 
       - name: Clean up downloaded icons
