@@ -83,7 +83,9 @@ jobs:
           s2c \
             -o ./icons/src/commonMain/kotlin \
             -p com.shipsco.lucide_compose \
+            -t com.shipsco.lucide_compose.Lucide \
             -opt false \
+            -rt Lucide \
             --no-preview \
             --kmp=true \
             ./lucide-icons-raw/icons
