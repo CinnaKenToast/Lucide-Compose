@@ -21,7 +21,7 @@ project:
 
 ```kotlin
 commonMain.dependencies {
-    implementation("io.github.cinnakentoast:lucide-icons:0.1.0")
+    implementation("io.github.cinnakentoast:lucide-icons:0.1.2")
 }
 ```
 
@@ -29,7 +29,7 @@ For an Android Compose project:
 
 ```kotlin
 dependencies {
-    implementation("io.github.cinnakentoast:lucide-icons:0.1.0")
+    implementation("io.github.cinnakentoast:lucide-icons:0.1.2")
 }
 ```
 
