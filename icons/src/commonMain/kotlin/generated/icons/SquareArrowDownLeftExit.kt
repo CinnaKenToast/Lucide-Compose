@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.SquareArrowOutDownLeft: ImageVector
+val Lucide.SquareArrowDownLeftExit: ImageVector
     get() {
-        val current = _squareArrowOutDownLeft
+        val current = _squareArrowDownLeftExit
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.SquareArrowOutDownLeft",
+            name = "com.shipsco.lucide_compose.Lucide.SquareArrowDownLeftExit",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
@@ -78,8 +78,8 @@ val Lucide.SquareArrowOutDownLeft: ImageVector
                 // v -6
                 verticalLineToRelative(dy = -6.0f)
             }
-        }.build().also { _squareArrowOutDownLeft = it }
+        }.build().also { _squareArrowDownLeftExit = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _squareArrowOutDownLeft: ImageVector? = null
+private var _squareArrowDownLeftExit: ImageVector? = null

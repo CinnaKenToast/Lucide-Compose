@@ -8,29 +8,33 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.SquareArrowOutUpLeft: ImageVector
+val Lucide.SquareArrowDownEnter: ImageVector
     get() {
-        val current = _squareArrowOutUpLeft
+        val current = _squareArrowDownEnter
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.SquareArrowOutUpLeft",
+            name = "com.shipsco.lucide_compose.Lucide.SquareArrowDownEnter",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M13 3 h6 a2 2 0 0 1 2 2 v14 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 v-6 M3 3 l9 9 M3 9 V3 h6
+            // M12 3 v10 m4 -10 h3 a2 2 0 0 1 2 2 v14 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 h3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 13 3
-                moveTo(x = 13.0f, y = 3.0f)
-                // h 6
-                horizontalLineToRelative(dx = 6.0f)
+                // M 12 3
+                moveTo(x = 12.0f, y = 3.0f)
+                // v 10
+                verticalLineToRelative(dy = 10.0f)
+                // m 4 -10
+                moveToRelative(dx = 4.0f, dy = -10.0f)
+                // h 3
+                horizontalLineToRelative(dx = 3.0f)
                 // a 2 2 0 0 1 2 2
                 arcToRelative(
                     a = 2.0f,
@@ -65,21 +69,37 @@ val Lucide.SquareArrowOutUpLeft: ImageVector
                     dx1 = -2.0f,
                     dy1 = -2.0f,
                 )
-                // v -6
-                verticalLineToRelative(dy = -6.0f)
-                // M 3 3
-                moveTo(x = 3.0f, y = 3.0f)
-                // l 9 9
-                lineToRelative(dx = 9.0f, dy = 9.0f)
-                // M 3 9
-                moveTo(x = 3.0f, y = 9.0f)
-                // V 3
-                verticalLineTo(y = 3.0f)
-                // h 6
-                horizontalLineToRelative(dx = 6.0f)
+                // V 5
+                verticalLineTo(y = 5.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 3
+                horizontalLineToRelative(dx = 3.0f)
             }
-        }.build().also { _squareArrowOutUpLeft = it }
+            // m8 9 4 4 4 -4
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 8 9
+                moveTo(x = 8.0f, y = 9.0f)
+                // l 4 4
+                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // l 4 -4
+                lineToRelative(dx = 4.0f, dy = -4.0f)
+            }
+        }.build().also { _squareArrowDownEnter = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _squareArrowOutUpLeft: ImageVector? = null
+private var _squareArrowDownEnter: ImageVector? = null
