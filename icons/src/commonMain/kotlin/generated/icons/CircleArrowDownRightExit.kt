@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.CircleArrowOutDownRight: ImageVector
+val Lucide.CircleArrowDownRightExit: ImageVector
     get() {
-        val current = _circleArrowOutDownRight
+        val current = _circleArrowDownRightExit
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.CircleArrowOutDownRight",
+            name = "com.shipsco.lucide_compose.Lucide.CircleArrowDownRightExit",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
@@ -50,8 +50,8 @@ val Lucide.CircleArrowOutDownRight: ImageVector
                 // h -6
                 horizontalLineToRelative(dx = -6.0f)
             }
-        }.build().also { _circleArrowOutDownRight = it }
+        }.build().also { _circleArrowDownRightExit = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _circleArrowOutDownRight: ImageVector? = null
+private var _circleArrowDownRightExit: ImageVector? = null

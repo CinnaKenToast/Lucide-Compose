@@ -8,29 +8,41 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.SquareArrowOutUpRight: ImageVector
+val Lucide.SquareArrowUpLeftExit: ImageVector
     get() {
-        val current = _squareArrowOutUpRight
+        val current = _squareArrowUpLeftExit
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.SquareArrowOutUpRight",
+            name = "com.shipsco.lucide_compose.Lucide.SquareArrowUpLeftExit",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M21 13 v6 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 h6 m10 0 -9 9 m3 -9 h6 v6
+            // M13 3 h6 a2 2 0 0 1 2 2 v14 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 v-6 M3 3 l9 9 M3 9 V3 h6
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 21 13
-                moveTo(x = 21.0f, y = 13.0f)
-                // v 6
-                verticalLineToRelative(dy = 6.0f)
+                // M 13 3
+                moveTo(x = 13.0f, y = 3.0f)
+                // h 6
+                horizontalLineToRelative(dx = 6.0f)
+                // a 2 2 0 0 1 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // v 14
+                verticalLineToRelative(dy = 14.0f)
                 // a 2 2 0 0 1 -2 2
                 arcToRelative(
                     a = 2.0f,
@@ -53,33 +65,21 @@ val Lucide.SquareArrowOutUpRight: ImageVector
                     dx1 = -2.0f,
                     dy1 = -2.0f,
                 )
-                // V 5
-                verticalLineTo(y = 5.0f)
-                // a 2 2 0 0 1 2 -2
-                arcToRelative(
-                    a = 2.0f,
-                    b = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = true,
-                    dx1 = 2.0f,
-                    dy1 = -2.0f,
-                )
+                // v -6
+                verticalLineToRelative(dy = -6.0f)
+                // M 3 3
+                moveTo(x = 3.0f, y = 3.0f)
+                // l 9 9
+                lineToRelative(dx = 9.0f, dy = 9.0f)
+                // M 3 9
+                moveTo(x = 3.0f, y = 9.0f)
+                // V 3
+                verticalLineTo(y = 3.0f)
                 // h 6
                 horizontalLineToRelative(dx = 6.0f)
-                // m 10 0
-                moveToRelative(dx = 10.0f, dy = 0.0f)
-                // l -9 9
-                lineToRelative(dx = -9.0f, dy = 9.0f)
-                // m 3 -9
-                moveToRelative(dx = 3.0f, dy = -9.0f)
-                // h 6
-                horizontalLineToRelative(dx = 6.0f)
-                // v 6
-                verticalLineToRelative(dy = 6.0f)
             }
-        }.build().also { _squareArrowOutUpRight = it }
+        }.build().also { _squareArrowUpLeftExit = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _squareArrowOutUpRight: ImageVector? = null
+private var _squareArrowUpLeftExit: ImageVector? = null
