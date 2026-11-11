@@ -74,36 +74,36 @@ val Lucide.MessageCircleQuestionMark: ImageVector
                     dy1 = -4.73f,
                 )
             }
-            // M9.09 9 a3 3 0 0 1 5.83 1 c0 2 -3 3 -3 3 M12 17z
+            // M9 9.5 a3 2.5 0 0 1 6 0 c0 2 -2 2 -3 3.5 m0 4z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 9.09 9
-                moveTo(x = 9.09f, y = 9.0f)
-                // a 3 3 0 0 1 5.83 1
+                // M 9 9.5
+                moveTo(x = 9.0f, y = 9.5f)
+                // a 3 2.5 0 0 1 6 0
                 arcToRelative(
                     a = 3.0f,
-                    b = 3.0f,
+                    b = 2.5f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = 5.83f,
-                    dy1 = 1.0f,
+                    dx1 = 6.0f,
+                    dy1 = 0.0f,
                 )
-                // c 0 2 -3 3 -3 3
+                // c 0 2 -2 2 -3 3.5
                 curveToRelative(
                     dx1 = 0.0f,
                     dy1 = 2.0f,
-                    dx2 = -3.0f,
-                    dy2 = 3.0f,
+                    dx2 = -2.0f,
+                    dy2 = 2.0f,
                     dx3 = -3.0f,
-                    dy3 = 3.0f,
+                    dy3 = 3.5f,
                 )
-                // M 12 17z
-                moveTo(x = 12.0f, y = 17.0f)
+                // m 0 4z
+                moveToRelative(dx = 0.0f, dy = 4.0f)
                 close()
             }
         }.build().also { _messageCircleQuestionMark = it }

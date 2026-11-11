@@ -20,7 +20,7 @@ val Lucide.FileQuestionMark: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M6 22 a2 2 0 0 1 -2 -2 V4 a2 2 0 0 1 2 -2 h8 a2.4 2.4 0 0 1 1.7 .7 l3.6 3.6 A2.4 2.4 0 0 1 20 8 v12 a2 2 0 0 1 -2 2z m6 -5z
+            // M6 22 a2 2 0 0 1 -2 -2 V4 a2 2 0 0 1 2 -2 h8 a2.4 2.4 0 0 1 1.7 .7 l3.6 3.6 A2.4 2.4 0 0 1 20 8 v12 a2 2 0 0 1 -2 2z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -88,38 +88,38 @@ val Lucide.FileQuestionMark: ImageVector
                     dy1 = 2.0f,
                 )
                 close()
-                // m 6 -5z
-                moveToRelative(dx = 6.0f, dy = -5.0f)
-                close()
             }
-            // M9.1 9 a3 3 0 0 1 5.82 1 c0 2 -3 3 -3 3
+            // M9 9.5 a3 2.5 0 0 1 6 0 c0 2 -2 2 -3 3.5 m0 4z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 9.1 9
-                moveTo(x = 9.1f, y = 9.0f)
-                // a 3 3 0 0 1 5.82 1
+                // M 9 9.5
+                moveTo(x = 9.0f, y = 9.5f)
+                // a 3 2.5 0 0 1 6 0
                 arcToRelative(
                     a = 3.0f,
-                    b = 3.0f,
+                    b = 2.5f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = 5.82f,
-                    dy1 = 1.0f,
+                    dx1 = 6.0f,
+                    dy1 = 0.0f,
                 )
-                // c 0 2 -3 3 -3 3
+                // c 0 2 -2 2 -3 3.5
                 curveToRelative(
                     dx1 = 0.0f,
                     dy1 = 2.0f,
-                    dx2 = -3.0f,
-                    dy2 = 3.0f,
+                    dx2 = -2.0f,
+                    dy2 = 2.0f,
                     dx3 = -3.0f,
-                    dy3 = 3.0f,
+                    dy3 = 3.5f,
                 )
+                // m 0 4z
+                moveToRelative(dx = 0.0f, dy = 4.0f)
+                close()
             }
         }.build().also { _fileQuestionMark = it }
     }
