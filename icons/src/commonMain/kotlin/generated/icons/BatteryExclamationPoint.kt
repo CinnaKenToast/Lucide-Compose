@@ -20,22 +20,22 @@ val Lucide.BatteryExclamationPoint: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M10 17z M10 7 v6 m4 -7 h2 a2 2 0 0 1 2 2 v8 a2 2 0 0 1 -2 2 h-2 m8 -4 v-4 M6 18 H4 a2 2 0 0 1 -2 -2 V8 a2 2 0 0 1 2 -2 h2
+            // M10 16z M10 8 v4 m4 -6 h2 a2 2 0 0 1 2 2 v8 a2 2 0 0 1 -2 2 h-2 m8 -4 v-4 M6 18 H4 a2 2 0 0 1 -2 -2 V8 a2 2 0 0 1 2 -2 h2
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 10 17z
-                moveTo(x = 10.0f, y = 17.0f)
+                // M 10 16z
+                moveTo(x = 10.0f, y = 16.0f)
                 close()
-                // M 10 7
-                moveTo(x = 10.0f, y = 7.0f)
-                // v 6
-                verticalLineToRelative(dy = 6.0f)
-                // m 4 -7
-                moveToRelative(dx = 4.0f, dy = -7.0f)
+                // M 10 8
+                moveTo(x = 10.0f, y = 8.0f)
+                // v 4
+                verticalLineToRelative(dy = 4.0f)
+                // m 4 -6
+                moveToRelative(dx = 4.0f, dy = -6.0f)
                 // h 2
                 horizontalLineToRelative(dx = 2.0f)
                 // a 2 2 0 0 1 2 2
