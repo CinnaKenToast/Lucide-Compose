@@ -8,64 +8,56 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.UnfoldHorizontal: ImageVector
+val Lucide.ChevronsToAxisDashedVertical: ImageVector
     get() {
-        val current = _unfoldHorizontal
+        val current = _chevronsToAxisDashedVertical
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.UnfoldHorizontal",
+            name = "com.shipsco.lucide_compose.Lucide.ChevronsToAxisDashedVertical",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M16 12 h6 M8 12 H2 M12 2 v2 m0 4 v2 m0 4 v2 m0 4 v2 m7 -7 3 -3 -3 -3 M5 9 l-3 3 3 3
+            // M12 14 v2 m0 4 v2 m0 -20 v2 m0 4 v2 m9 -2 -4 4 4 4 M3 8 l4 4 -4 4
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 16 12
-                moveTo(x = 16.0f, y = 12.0f)
-                // h 6
-                horizontalLineToRelative(dx = 6.0f)
-                // M 8 12
-                moveTo(x = 8.0f, y = 12.0f)
-                // H 2
-                horizontalLineTo(x = 2.0f)
-                // M 12 2
-                moveTo(x = 12.0f, y = 2.0f)
+                // M 12 14
+                moveTo(x = 12.0f, y = 14.0f)
                 // v 2
                 verticalLineToRelative(dy = 2.0f)
                 // m 0 4
                 moveToRelative(dx = 0.0f, dy = 4.0f)
                 // v 2
                 verticalLineToRelative(dy = 2.0f)
-                // m 0 4
-                moveToRelative(dx = 0.0f, dy = 4.0f)
+                // m 0 -20
+                moveToRelative(dx = 0.0f, dy = -20.0f)
                 // v 2
                 verticalLineToRelative(dy = 2.0f)
                 // m 0 4
                 moveToRelative(dx = 0.0f, dy = 4.0f)
                 // v 2
                 verticalLineToRelative(dy = 2.0f)
-                // m 7 -7
-                moveToRelative(dx = 7.0f, dy = -7.0f)
-                // l 3 -3
-                lineToRelative(dx = 3.0f, dy = -3.0f)
-                // l -3 -3
-                lineToRelative(dx = -3.0f, dy = -3.0f)
-                // M 5 9
-                moveTo(x = 5.0f, y = 9.0f)
-                // l -3 3
-                lineToRelative(dx = -3.0f, dy = 3.0f)
-                // l 3 3
-                lineToRelative(dx = 3.0f, dy = 3.0f)
+                // m 9 -2
+                moveToRelative(dx = 9.0f, dy = -2.0f)
+                // l -4 4
+                lineToRelative(dx = -4.0f, dy = 4.0f)
+                // l 4 4
+                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // M 3 8
+                moveTo(x = 3.0f, y = 8.0f)
+                // l 4 4
+                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // l -4 4
+                lineToRelative(dx = -4.0f, dy = 4.0f)
             }
-        }.build().also { _unfoldHorizontal = it }
+        }.build().also { _chevronsToAxisDashedVertical = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _unfoldHorizontal: ImageVector? = null
+private var _chevronsToAxisDashedVertical: ImageVector? = null

@@ -8,39 +8,27 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.TrianglesCenterlineDashedHorizontal: ImageVector
+val Lucide.CaretsToAxisHorizontal: ImageVector
     get() {
-        val current = _trianglesCenterlineDashedHorizontal
+        val current = _caretsToAxisHorizontal
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.TrianglesCenterlineDashedHorizontal",
+            name = "com.shipsco.lucide_compose.Lucide.CaretsToAxisHorizontal",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M10 12 H8 m8 0 h-2 m8 0 h-2 M4 12 H2 m5.3 8.29 A1 1 0 0 0 8 22 h8 a1 1 0 0 0 .7 -1.71 l-3.99 -4 a1 1 0 0 0 -1.42 0z m0 -16.58 A1 1 0 0 1 8 2 h8 a1 1 0 0 1 .7 1.71 l-3.99 4 a1 1 0 0 1 -1.42 0z
+            // M22 12 H2 m5.3 8.29 A1 1 0 0 0 8 22 h8 a1 1 0 0 0 .7 -1.71 l-3.99 -4 a1 1 0 0 0 -1.42 0z m0 -16.58 A1 1 0 0 1 8 2 h8 a1 1 0 0 1 .7 1.71 l-3.99 4 a1 1 0 0 1 -1.42 0z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 10 12
-                moveTo(x = 10.0f, y = 12.0f)
-                // H 8
-                horizontalLineTo(x = 8.0f)
-                // m 8 0
-                moveToRelative(dx = 8.0f, dy = 0.0f)
-                // h -2
-                horizontalLineToRelative(dx = -2.0f)
-                // m 8 0
-                moveToRelative(dx = 8.0f, dy = 0.0f)
-                // h -2
-                horizontalLineToRelative(dx = -2.0f)
-                // M 4 12
-                moveTo(x = 4.0f, y = 12.0f)
+                // M 22 12
+                moveTo(x = 22.0f, y = 12.0f)
                 // H 2
                 horizontalLineTo(x = 2.0f)
                 // m 5.3 8.29
@@ -118,8 +106,8 @@ val Lucide.TrianglesCenterlineDashedHorizontal: ImageVector
                 )
                 close()
             }
-        }.build().also { _trianglesCenterlineDashedHorizontal = it }
+        }.build().also { _caretsToAxisHorizontal = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _trianglesCenterlineDashedHorizontal: ImageVector? = null
+private var _caretsToAxisHorizontal: ImageVector? = null

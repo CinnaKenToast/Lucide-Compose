@@ -20,7 +20,37 @@ val Lucide.LoaderPinwheel: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M22 12 a1 1 0 0 1 -10 0 1 1 0 0 0 -10 0
+            // M17 3.34 A5 5 0 1 1 12 12 a5 5 0 1 0 -5 8.66
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 17 3.34
+                moveTo(x = 17.0f, y = 3.34f)
+                // A 5 5 0 1 1 12 12
+                arcTo(
+                    horizontalEllipseRadius = 5.0f,
+                    verticalEllipseRadius = 5.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = true,
+                    x1 = 12.0f,
+                    y1 = 12.0f,
+                )
+                // a 5 5 0 1 0 -5 8.66
+                arcToRelative(
+                    a = 5.0f,
+                    b = 5.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = true,
+                    isPositiveArc = false,
+                    dx1 = -5.0f,
+                    dy1 = 8.66f,
+                )
+            }
+            // M22 12 a5 5 0 0 1 -10 0 5 5 0 0 0 -10 0
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -29,20 +59,20 @@ val Lucide.LoaderPinwheel: ImageVector
             ) {
                 // M 22 12
                 moveTo(x = 22.0f, y = 12.0f)
-                // a 1 1 0 0 1 -10 0
+                // a 5 5 0 0 1 -10 0
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 5.0f,
+                    b = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
                     dx1 = -10.0f,
                     dy1 = 0.0f,
                 )
-                // a 1 1 0 0 0 -10 0
+                // a 5 5 0 0 0 -10 0
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 5.0f,
+                    b = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = false,
@@ -50,64 +80,34 @@ val Lucide.LoaderPinwheel: ImageVector
                     dy1 = 0.0f,
                 )
             }
-            // M7 20.7 a1 1 0 1 1 5 -8.7 1 1 0 1 0 5 -8.6
+            // M7 3.34 A5 5 0 1 1 12 12 a5 5 0 1 0 5 8.66
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 7 20.7
-                moveTo(x = 7.0f, y = 20.7f)
-                // a 1 1 0 1 1 5 -8.7
-                arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                // M 7 3.34
+                moveTo(x = 7.0f, y = 3.34f)
+                // A 5 5 0 1 1 12 12
+                arcTo(
+                    horizontalEllipseRadius = 5.0f,
+                    verticalEllipseRadius = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = true,
                     isPositiveArc = true,
-                    dx1 = 5.0f,
-                    dy1 = -8.7f,
+                    x1 = 12.0f,
+                    y1 = 12.0f,
                 )
-                // a 1 1 0 1 0 5 -8.6
+                // a 5 5 0 1 0 5 8.66
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 5.0f,
+                    b = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = true,
                     isPositiveArc = false,
                     dx1 = 5.0f,
-                    dy1 = -8.6f,
-                )
-            }
-            // M7 3.3 a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 7 3.3
-                moveTo(x = 7.0f, y = 3.3f)
-                // a 1 1 0 1 1 5 8.6
-                arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = true,
-                    isPositiveArc = true,
-                    dx1 = 5.0f,
-                    dy1 = 8.6f,
-                )
-                // a 1 1 0 1 0 5 8.6
-                arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = true,
-                    isPositiveArc = false,
-                    dx1 = 5.0f,
-                    dy1 = 8.6f,
+                    dy1 = 8.66f,
                 )
             }
             // <circle cx="12.0" cy="12.0" radius="10.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
