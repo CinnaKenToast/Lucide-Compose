@@ -1,23 +1,69 @@
 name: Release
 
 on:
+  schedule:
+    - cron: "17 12 1 * *" # first day of the month at 12:17 UTC
   workflow_dispatch:
     inputs:
       version:
-        description: Release version in MAJOR.MINOR.PATCH format, for example 0.1.0
-        required: true
+        description: Release version in MAJOR.MINOR.PATCH format. Leave empty to bump the patch of the latest tag.
+        required: false
         type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: release-${{ inputs.version }}
+  group: release
   cancel-in-progress: false
 
 jobs:
-  release:
+  plan:
     if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.resolve.outputs.version }}
+      skip: ${{ steps.resolve.outputs.skip }}
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Resolve release version
+        id: resolve
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+
+          if [[ -n "$INPUT_VERSION" ]]; then
+            echo "version=$INPUT_VERSION" >> "$GITHUB_OUTPUT"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          last_tag="$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | head -n 1)"
+          if [[ -z "$last_tag" ]]; then
+            echo "No release tag found. Run the workflow manually with a version." >&2
+            exit 1
+          fi
+
+          if git diff --quiet "$last_tag" HEAD -- icons/src lucide-version.txt; then
+            echo "No icon changes since $last_tag, skipping the release."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          IFS=. read -r major minor patch <<< "${last_tag#v}"
+          echo "version=$major.$minor.$((patch + 1))" >> "$GITHUB_OUTPUT"
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+  release:
+    needs: plan
+    if: github.ref == 'refs/heads/main' && needs.plan.outputs.skip != 'true'
     runs-on: macos-latest
 
     steps:
@@ -45,7 +91,7 @@ jobs:
 
       - name: Prepare release branch and tag
         env:
-          RELEASE_VERSION: ${{ inputs.version }}
+          RELEASE_VERSION: ${{ needs.plan.outputs.version }}
         run: |
           set -euo pipefail
 
