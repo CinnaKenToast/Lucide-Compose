@@ -20,17 +20,41 @@ val Lucide.FileClock: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M16 22 h2 a2 2 0 0 0 2 -2 V8 a2.4 2.4 0 0 0 -.7 -1.7 l-3.6 -3.6 A2.4 2.4 0 0 0 14 2 H6 a2 2 0 0 0 -2 2 v2.85
+            // M14 2 v5 a1 1 0 0 0 1 1 h5
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 16 22
-                moveTo(x = 16.0f, y = 22.0f)
-                // h 2
-                horizontalLineToRelative(dx = 2.0f)
+                // M 14 2
+                moveTo(x = 14.0f, y = 2.0f)
+                // v 5
+                verticalLineToRelative(dy = 5.0f)
+                // a 1 1 0 0 0 1 1
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 1.0f,
+                    dy1 = 1.0f,
+                )
+                // h 5
+                horizontalLineToRelative(dx = 5.0f)
+            }
+            // M14.5 22 H18 a2 2 0 0 0 2 -2 V8 a2.4 2.4 0 0 0 -.7 -1.7 l-3.6 -3.6 A2.4 2.4 0 0 0 14 2 H6 a2 2 0 0 0 -2 2 v4.51 m3 6.99 v1.7 l1 .63
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 14.5 22
+                moveTo(x = 14.5f, y = 22.0f)
+                // H 18
+                horizontalLineTo(x = 18.0f)
                 // a 2 2 0 0 0 2 -2
                 arcToRelative(
                     a = 2.0f,
@@ -77,68 +101,44 @@ val Lucide.FileClock: ImageVector
                     dx1 = -2.0f,
                     dy1 = 2.0f,
                 )
-                // v 2.85
-                verticalLineToRelative(dy = 2.85f)
+                // v 4.51
+                verticalLineToRelative(dy = 4.51f)
+                // m 3 6.99
+                moveToRelative(dx = 3.0f, dy = 6.99f)
+                // v 1.7
+                verticalLineToRelative(dy = 1.7f)
+                // l 1 0.63
+                lineToRelative(dx = 1.0f, dy = 0.63f)
             }
-            // M14 2 v5 a1 1 0 0 0 1 1 h5 M8 14 v2.2 l1.6 1
+            // <circle cx="7.0" cy="17.0" radius="5.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 14 2
-                moveTo(x = 14.0f, y = 2.0f)
-                // v 5
-                verticalLineToRelative(dy = 5.0f)
-                // a 1 1 0 0 0 1 1
+                // M 7 17
+                moveTo(x = 7.0f, y = 17.0f)
+                // m -5 0
+                moveToRelative(dx = -5.0f, dy = 0.0f)
+                // a 5 5 0 1 1 10 0
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = 1.0f,
-                    dy1 = 1.0f,
-                )
-                // h 5
-                horizontalLineToRelative(dx = 5.0f)
-                // M 8 14
-                moveTo(x = 8.0f, y = 14.0f)
-                // v 2.2
-                verticalLineToRelative(dy = 2.2f)
-                // l 1.6 1
-                lineToRelative(dx = 1.6f, dy = 1.0f)
-            }
-            // <circle cx="8.0" cy="16.0" radius="6.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 8 16
-                moveTo(x = 8.0f, y = 16.0f)
-                // m -6 0
-                moveToRelative(dx = -6.0f, dy = 0.0f)
-                // a 6 6 0 1 1 12 0
-                arcToRelative(
-                    a = 6.0f,
-                    b = 6.0f,
+                    a = 5.0f,
+                    b = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = true,
                     isPositiveArc = true,
-                    dx1 = 12.0f,
+                    dx1 = 10.0f,
                     dy1 = 0.0f,
                 )
-                // a 6 6 0 1 1 -12 0z
+                // a 5 5 0 1 1 -10 0z
                 arcToRelative(
-                    a = 6.0f,
-                    b = 6.0f,
+                    a = 5.0f,
+                    b = 5.0f,
                     theta = 0.0f,
                     isMoreThanHalf = true,
                     isPositiveArc = true,
-                    dx1 = -12.0f,
+                    dx1 = -10.0f,
                     dy1 = 0.0f,
                 )
                 close()
