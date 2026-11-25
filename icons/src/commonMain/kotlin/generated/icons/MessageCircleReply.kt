@@ -74,31 +74,17 @@ val Lucide.MessageCircleReply: ImageVector
                     dy1 = -4.73f,
                 )
             }
-            // m10 15 -3 -3 3 -3
+            // M8 12 h6 a2 2 0 0 1 2 2 v1
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 10 15
-                moveTo(x = 10.0f, y = 15.0f)
-                // l -3 -3
-                lineToRelative(dx = -3.0f, dy = -3.0f)
-                // l 3 -3
-                lineToRelative(dx = 3.0f, dy = -3.0f)
-            }
-            // M7 12 h8 a2 2 0 0 1 2 2 v1
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 7 12
-                moveTo(x = 7.0f, y = 12.0f)
-                // h 8
-                horizontalLineToRelative(dx = 8.0f)
+                // M 8 12
+                moveTo(x = 8.0f, y = 12.0f)
+                // h 6
+                horizontalLineToRelative(dx = 6.0f)
                 // a 2 2 0 0 1 2 2
                 arcToRelative(
                     a = 2.0f,
@@ -111,6 +97,20 @@ val Lucide.MessageCircleReply: ImageVector
                 )
                 // v 1
                 verticalLineToRelative(dy = 1.0f)
+            }
+            // m11 15 -3 -3 3 -3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 11 15
+                moveTo(x = 11.0f, y = 15.0f)
+                // l -3 -3
+                lineToRelative(dx = -3.0f, dy = -3.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
             }
         }.build().also { _messageCircleReply = it }
     }

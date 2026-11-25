@@ -20,7 +20,7 @@ val Lucide.MessageSquareReply: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M22 17 a2 2 0 0 1 -2 2 H6.83 a2 2 0 0 0 -1.42 .59 l-2.2 2.2 A.71 .71 0 0 1 2 21.29 V5 a2 2 0 0 1 2 -2 h16 a2 2 0 0 1 2 2z
+            // M22 17 a2 2 0 0 1 -2 2 H6.83 a2 2 0 0 0 -1.42 .59 l-2.2 2.2 A.7 .7 0 0 1 2 21.29 V5 a2 2 0 0 1 2 -2 h16 a2 2 0 0 1 2 2z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -53,10 +53,10 @@ val Lucide.MessageSquareReply: ImageVector
                 )
                 // l -2.2 2.2
                 lineToRelative(dx = -2.2f, dy = 2.2f)
-                // A 0.71 0.71 0 0 1 2 21.29
+                // A 0.7 0.7 0 0 1 2 21.29
                 arcTo(
-                    horizontalEllipseRadius = 0.71f,
-                    verticalEllipseRadius = 0.71f,
+                    horizontalEllipseRadius = 0.7f,
+                    verticalEllipseRadius = 0.7f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
@@ -89,29 +89,15 @@ val Lucide.MessageSquareReply: ImageVector
                 )
                 close()
             }
-            // m10 8 -3 3 3 3
+            // M16 14 v-1 a2 2 0 0 0 -2 -2 H8
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 10 8
-                moveTo(x = 10.0f, y = 8.0f)
-                // l -3 3
-                lineToRelative(dx = -3.0f, dy = 3.0f)
-                // l 3 3
-                lineToRelative(dx = 3.0f, dy = 3.0f)
-            }
-            // M17 14 v-1 a2 2 0 0 0 -2 -2 H7
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 17 14
-                moveTo(x = 17.0f, y = 14.0f)
+                // M 16 14
+                moveTo(x = 16.0f, y = 14.0f)
                 // v -1
                 verticalLineToRelative(dy = -1.0f)
                 // a 2 2 0 0 0 -2 -2
@@ -124,8 +110,22 @@ val Lucide.MessageSquareReply: ImageVector
                     dx1 = -2.0f,
                     dy1 = -2.0f,
                 )
-                // H 7
-                horizontalLineTo(x = 7.0f)
+                // H 8
+                horizontalLineTo(x = 8.0f)
+            }
+            // m11 8 -3 3 3 3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 11 8
+                moveTo(x = 11.0f, y = 8.0f)
+                // l -3 3
+                lineToRelative(dx = -3.0f, dy = 3.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
             }
         }.build().also { _messageSquareReply = it }
     }
