@@ -61,7 +61,7 @@ Compose `ImageVector` values.
 
 The generated icon sources are updated from upstream Lucide releases by the
 repository's GitHub Actions workflow. They currently track upstream
-[Lucide 1.80.0](https://github.com/lucide-icons/lucide/releases/tag/1.80.0).
+[Lucide 1.81.0](https://github.com/lucide-icons/lucide/releases/tag/1.81.0).
 Avoid editing generated icon files by hand.
 
 ## Contributing

@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val Lucide.RectangleLandscapePlay: ImageVector
+val Lucide.RectangleHorizontalPlay: ImageVector
     get() {
-        val current = _rectangleLandscapePlay
+        val current = _rectangleHorizontalPlay
         if (current != null) return current
 
         return ImageVector.Builder(
-            name = "com.shipsco.lucide_compose.Lucide.RectangleLandscapePlay",
+            name = "com.shipsco.lucide_compose.Lucide.RectangleHorizontalPlay",
             defaultWidth = 24.0.dp,
             defaultHeight = 24.0.dp,
             viewportWidth = 24.0f,
@@ -122,8 +122,8 @@ val Lucide.RectangleLandscapePlay: ImageVector
                 )
                 close()
             }
-        }.build().also { _rectangleLandscapePlay = it }
+        }.build().also { _rectangleHorizontalPlay = it }
     }
 
 @Suppress("ObjectPropertyName")
-private var _rectangleLandscapePlay: ImageVector? = null
+private var _rectangleHorizontalPlay: ImageVector? = null

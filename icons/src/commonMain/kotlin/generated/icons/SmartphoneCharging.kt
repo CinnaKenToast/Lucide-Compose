@@ -20,15 +20,31 @@ val Lucide.SmartphoneCharging: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // <rect width="14" height="20" rx="2.0" ry="2.0" x="5.0" y="2.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            // M12.67 8 10 12 h4 l-2.67 4
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 5 4
-                moveTo(x = 5.0f, y = 4.0f)
+                // M 12.67 8
+                moveTo(x = 12.67f, y = 8.0f)
+                // L 10 12
+                lineTo(x = 10.0f, y = 12.0f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
+                // l -2.67 4
+                lineToRelative(dx = -2.67f, dy = 4.0f)
+            }
+            // <rect width="12" height="20" rx="2.0" ry="2.0" x="6.0" y="2.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 6 4
+                moveTo(x = 6.0f, y = 4.0f)
                 // a 2 2 0 0 1 2 -2
                 arcToRelative(
                     a = 2.0f,
@@ -39,8 +55,8 @@ val Lucide.SmartphoneCharging: ImageVector
                     dx1 = 2.0f,
                     dy1 = -2.0f,
                 )
-                // h 10
-                horizontalLineToRelative(dx = 10.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
                 // a 2 2 0 0 1 2 2
                 arcToRelative(
                     a = 2.0f,
@@ -63,8 +79,8 @@ val Lucide.SmartphoneCharging: ImageVector
                     dx1 = -2.0f,
                     dy1 = 2.0f,
                 )
-                // h -10
-                horizontalLineToRelative(dx = -10.0f)
+                // h -8
+                horizontalLineToRelative(dx = -8.0f)
                 // a 2 2 0 0 1 -2 -2z
                 arcToRelative(
                     a = 2.0f,
@@ -76,22 +92,6 @@ val Lucide.SmartphoneCharging: ImageVector
                     dy1 = -2.0f,
                 )
                 close()
-            }
-            // M12.67 8 10 12 h4 l-2.67 4
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 12.67 8
-                moveTo(x = 12.67f, y = 8.0f)
-                // L 10 12
-                lineTo(x = 10.0f, y = 12.0f)
-                // h 4
-                horizontalLineToRelative(dx = 4.0f)
-                // l -2.67 4
-                lineToRelative(dx = -2.67f, dy = 4.0f)
             }
         }.build().also { _smartphoneCharging = it }
     }
