@@ -20,15 +20,15 @@ val Lucide.RectangleHorizontal: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // <rect width="20" height="12" rx="2.0" x="2.0" y="6.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            // <rect width="20" height="14" rx="2.0" x="2.0" y="5.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 2 8
-                moveTo(x = 2.0f, y = 8.0f)
+                // M 2 7
+                moveTo(x = 2.0f, y = 7.0f)
                 // a 2 2 0 0 1 2 -2
                 arcToRelative(
                     a = 2.0f,
@@ -51,8 +51,8 @@ val Lucide.RectangleHorizontal: ImageVector
                     dx1 = 2.0f,
                     dy1 = 2.0f,
                 )
-                // v 8
-                verticalLineToRelative(dy = 8.0f)
+                // v 10
+                verticalLineToRelative(dy = 10.0f)
                 // a 2 2 0 0 1 -2 2
                 arcToRelative(
                     a = 2.0f,

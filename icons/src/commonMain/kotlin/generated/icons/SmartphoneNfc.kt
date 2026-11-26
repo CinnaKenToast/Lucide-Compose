@@ -20,60 +20,60 @@ val Lucide.SmartphoneNfc: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // <rect width="7" height="12" rx="1.0" x="2.0" y="6.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            // <rect width="7" height="12" rx="2.0" x="2.0" y="6.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 2 7
-                moveTo(x = 2.0f, y = 7.0f)
-                // a 1 1 0 0 1 1 -1
+                // M 2 8
+                moveTo(x = 2.0f, y = 8.0f)
+                // a 2 2 0 0 1 2 -2
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 2.0f,
+                    b = 2.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = 1.0f,
-                    dy1 = -1.0f,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
                 )
-                // h 5
-                horizontalLineToRelative(dx = 5.0f)
-                // a 1 1 0 0 1 1 1
+                // h 3
+                horizontalLineToRelative(dx = 3.0f)
+                // a 2 2 0 0 1 2 2
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 2.0f,
+                    b = 2.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = 1.0f,
-                    dy1 = 1.0f,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
                 )
-                // v 10
-                verticalLineToRelative(dy = 10.0f)
-                // a 1 1 0 0 1 -1 1
+                // v 8
+                verticalLineToRelative(dy = 8.0f)
+                // a 2 2 0 0 1 -2 2
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 2.0f,
+                    b = 2.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = -1.0f,
-                    dy1 = 1.0f,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
                 )
-                // h -5
-                horizontalLineToRelative(dx = -5.0f)
-                // a 1 1 0 0 1 -1 -1z
+                // h -3
+                horizontalLineToRelative(dx = -3.0f)
+                // a 2 2 0 0 1 -2 -2z
                 arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
+                    a = 2.0f,
+                    b = 2.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = -1.0f,
-                    dy1 = -1.0f,
+                    dx1 = -2.0f,
+                    dy1 = -2.0f,
                 )
                 close()
             }

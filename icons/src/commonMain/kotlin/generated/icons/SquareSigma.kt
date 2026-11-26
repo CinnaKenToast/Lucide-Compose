@@ -77,27 +77,73 @@ val Lucide.SquareSigma: ImageVector
                 )
                 close()
             }
-            // M16 8.9 V7 H8 l4 5 -4 5 h8 v-1.9
+            // M15 9 a1 1 0 0 0 -1 -1 H9.5 a.5 .5 0 0 0 -.42 .78 l1.78 2.67 a1 1 0 0 1 0 1.1 l-1.78 2.67 A.5 .5 0 0 0 9.5 16 h4.6 a.9 .9 0 0 0 .9 -.9
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 16 8.9
-                moveTo(x = 16.0f, y = 8.9f)
-                // V 7
-                verticalLineTo(y = 7.0f)
-                // H 8
-                horizontalLineTo(x = 8.0f)
-                // l 4 5
-                lineToRelative(dx = 4.0f, dy = 5.0f)
-                // l -4 5
-                lineToRelative(dx = -4.0f, dy = 5.0f)
-                // h 8
-                horizontalLineToRelative(dx = 8.0f)
-                // v -1.9
-                verticalLineToRelative(dy = -1.9f)
+                // M 15 9
+                moveTo(x = 15.0f, y = 9.0f)
+                // a 1 1 0 0 0 -1 -1
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -1.0f,
+                    dy1 = -1.0f,
+                )
+                // H 9.5
+                horizontalLineTo(x = 9.5f)
+                // a 0.5 0.5 0 0 0 -0.42 0.78
+                arcToRelative(
+                    a = 0.5f,
+                    b = 0.5f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = -0.42f,
+                    dy1 = 0.78f,
+                )
+                // l 1.78 2.67
+                lineToRelative(dx = 1.78f, dy = 2.67f)
+                // a 1 1 0 0 1 0 1.1
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 0.0f,
+                    dy1 = 1.1f,
+                )
+                // l -1.78 2.67
+                lineToRelative(dx = -1.78f, dy = 2.67f)
+                // A 0.5 0.5 0 0 0 9.5 16
+                arcTo(
+                    horizontalEllipseRadius = 0.5f,
+                    verticalEllipseRadius = 0.5f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    x1 = 9.5f,
+                    y1 = 16.0f,
+                )
+                // h 4.6
+                horizontalLineToRelative(dx = 4.6f)
+                // a 0.9 0.9 0 0 0 0.9 -0.9
+                arcToRelative(
+                    a = 0.9f,
+                    b = 0.9f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 0.9f,
+                    dy1 = -0.9f,
+                )
             }
         }.build().also { _squareSigma = it }
     }

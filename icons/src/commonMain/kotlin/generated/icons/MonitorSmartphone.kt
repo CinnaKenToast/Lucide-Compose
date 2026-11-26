@@ -20,17 +20,19 @@ val Lucide.MonitorSmartphone: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M18 8 V6 a2 2 0 0 0 -2 -2 H4 a2 2 0 0 0 -2 2 v7 a2 2 0 0 0 2 2 h8 m-2 4 v-3.96 3.15 M7 19 h5
+            // M10 14 v4 m8 -13 a2 2 0 0 0 -2 -2 H4 a2 2 0 0 0 -2 2 v7 a2 2 0 0 0 2 2 h7 m-4 4 h4
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 18 8
-                moveTo(x = 18.0f, y = 8.0f)
-                // V 6
-                verticalLineTo(y = 6.0f)
+                // M 10 14
+                moveTo(x = 10.0f, y = 14.0f)
+                // v 4
+                verticalLineToRelative(dy = 4.0f)
+                // m 8 -13
+                moveToRelative(dx = 8.0f, dy = -13.0f)
                 // a 2 2 0 0 0 -2 -2
                 arcToRelative(
                     a = 2.0f,
@@ -65,28 +67,22 @@ val Lucide.MonitorSmartphone: ImageVector
                     dx1 = 2.0f,
                     dy1 = 2.0f,
                 )
-                // h 8
-                horizontalLineToRelative(dx = 8.0f)
-                // m -2 4
-                moveToRelative(dx = -2.0f, dy = 4.0f)
-                // v -3.96
-                verticalLineToRelative(dy = -3.96f)
-                // v 3.15
-                verticalLineToRelative(dy = 3.15f)
-                // M 7 19
-                moveTo(x = 7.0f, y = 19.0f)
-                // h 5
-                horizontalLineToRelative(dx = 5.0f)
+                // h 7
+                horizontalLineToRelative(dx = 7.0f)
+                // m -4 4
+                moveToRelative(dx = -4.0f, dy = 4.0f)
+                // h 4
+                horizontalLineToRelative(dx = 4.0f)
             }
-            // <rect width="6" height="10" rx="2.0" x="16.0" y="12.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
+            // <rect width="7" height="12" rx="2.0" x="15.0" y="9.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 16 14
-                moveTo(x = 16.0f, y = 14.0f)
+                // M 15 11
+                moveTo(x = 15.0f, y = 11.0f)
                 // a 2 2 0 0 1 2 -2
                 arcToRelative(
                     a = 2.0f,
@@ -97,8 +93,8 @@ val Lucide.MonitorSmartphone: ImageVector
                     dx1 = 2.0f,
                     dy1 = -2.0f,
                 )
-                // h 2
-                horizontalLineToRelative(dx = 2.0f)
+                // h 3
+                horizontalLineToRelative(dx = 3.0f)
                 // a 2 2 0 0 1 2 2
                 arcToRelative(
                     a = 2.0f,
@@ -109,8 +105,8 @@ val Lucide.MonitorSmartphone: ImageVector
                     dx1 = 2.0f,
                     dy1 = 2.0f,
                 )
-                // v 6
-                verticalLineToRelative(dy = 6.0f)
+                // v 8
+                verticalLineToRelative(dy = 8.0f)
                 // a 2 2 0 0 1 -2 2
                 arcToRelative(
                     a = 2.0f,
@@ -121,8 +117,8 @@ val Lucide.MonitorSmartphone: ImageVector
                     dx1 = -2.0f,
                     dy1 = 2.0f,
                 )
-                // h -2
-                horizontalLineToRelative(dx = -2.0f)
+                // h -3
+                horizontalLineToRelative(dx = -3.0f)
                 // a 2 2 0 0 1 -2 -2z
                 arcToRelative(
                     a = 2.0f,
