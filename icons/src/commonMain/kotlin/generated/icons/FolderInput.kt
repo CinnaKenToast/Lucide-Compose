@@ -20,13 +20,17 @@ val Lucide.FolderInput: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M2 9 V5 a2 2 0 0 1 2 -2 h3.9 a2 2 0 0 1 1.69 .9 l.81 1.2 A2 2 0 0 0 12.07 6 H20 a2 2 0 0 1 2 2 v10 a2 2 0 0 1 -2 2 H4 a2 2 0 0 1 -2 -2 v-1 m0 -4 h10
+            // M2 13 h8 M2 9 V5 a2 2 0 0 1 2 -2 h3.9 a2 2 0 0 1 1.69 .9 l.81 1.2 A2 2 0 0 0 12.07 6 H20 a2 2 0 0 1 2 2 v10 a2 2 0 0 1 -2 2 H4 a2 2 0 0 1 -2 -2 v-1
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
+                // M 2 13
+                moveTo(x = 2.0f, y = 13.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
                 // M 2 9
                 moveTo(x = 2.0f, y = 9.0f)
                 // V 5
@@ -103,20 +107,16 @@ val Lucide.FolderInput: ImageVector
                 )
                 // v -1
                 verticalLineToRelative(dy = -1.0f)
-                // m 0 -4
-                moveToRelative(dx = 0.0f, dy = -4.0f)
-                // h 10
-                horizontalLineToRelative(dx = 10.0f)
             }
-            // m9 16 3 -3 -3 -3
+            // m7 16 3 -3 -3 -3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 9 16
-                moveTo(x = 9.0f, y = 16.0f)
+                // M 7 16
+                moveTo(x = 7.0f, y = 16.0f)
                 // l 3 -3
                 lineToRelative(dx = 3.0f, dy = -3.0f)
                 // l -3 -3

@@ -20,23 +20,29 @@ val Lucide.HardDriveDownload: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M12 2 v8 m4 -4 -4 4 -4 -4
+            // M10 18z M12 2 v8 m3 -3 -3 3 -3 -3 M6 18z
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
+                // M 10 18z
+                moveTo(x = 10.0f, y = 18.0f)
+                close()
                 // M 12 2
                 moveTo(x = 12.0f, y = 2.0f)
                 // v 8
                 verticalLineToRelative(dy = 8.0f)
-                // m 4 -4
-                moveToRelative(dx = 4.0f, dy = -4.0f)
-                // l -4 4
-                lineToRelative(dx = -4.0f, dy = 4.0f)
-                // l -4 -4
-                lineToRelative(dx = -4.0f, dy = -4.0f)
+                // m 3 -3
+                moveToRelative(dx = 3.0f, dy = -3.0f)
+                // l -3 3
+                lineToRelative(dx = -3.0f, dy = 3.0f)
+                // l -3 -3
+                lineToRelative(dx = -3.0f, dy = -3.0f)
+                // M 6 18z
+                moveTo(x = 6.0f, y = 18.0f)
+                close()
             }
             // <rect width="20" height="8" rx="2.0" x="2.0" y="14.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
@@ -93,20 +99,6 @@ val Lucide.HardDriveDownload: ImageVector
                     dx1 = -2.0f,
                     dy1 = -2.0f,
                 )
-                close()
-            }
-            // M6 18z M10 18z
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 6 18z
-                moveTo(x = 6.0f, y = 18.0f)
-                close()
-                // M 10 18z
-                moveTo(x = 10.0f, y = 18.0f)
                 close()
             }
         }.build().also { _hardDriveDownload = it }

@@ -20,6 +20,56 @@ val Lucide.ArchiveArrowDown: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
+            // M12 13 v8 m8 -13 v11 a2 2 0 0 1 -2 2 h-.34 M4 8 v11 a2 2 0 0 0 2 2 h.34 M9 18 l3 3 3 -3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 12 13
+                moveTo(x = 12.0f, y = 13.0f)
+                // v 8
+                verticalLineToRelative(dy = 8.0f)
+                // m 8 -13
+                moveToRelative(dx = 8.0f, dy = -13.0f)
+                // v 11
+                verticalLineToRelative(dy = 11.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // h -0.34
+                horizontalLineToRelative(dx = -0.34f)
+                // M 4 8
+                moveTo(x = 4.0f, y = 8.0f)
+                // v 11
+                verticalLineToRelative(dy = 11.0f)
+                // a 2 2 0 0 0 2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 2.0f,
+                    dy1 = 2.0f,
+                )
+                // h 0.34
+                horizontalLineToRelative(dx = 0.34f)
+                // M 9 18
+                moveTo(x = 9.0f, y = 18.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+            }
             // <rect width="20" height="5" rx="1.0" x="2.0" y="3.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(
                 stroke = SolidColor(Color(0xFF000000)),
@@ -76,56 +126,6 @@ val Lucide.ArchiveArrowDown: ImageVector
                     dy1 = -1.0f,
                 )
                 close()
-            }
-            // M4 8 v11 a2 2 0 0 0 2 2 h.34 M20 8 v11 a2 2 0 0 1 -2 2 h-.34 M9 18 l3 3 3 -3 m-3 -6 v9
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 4 8
-                moveTo(x = 4.0f, y = 8.0f)
-                // v 11
-                verticalLineToRelative(dy = 11.0f)
-                // a 2 2 0 0 0 2 2
-                arcToRelative(
-                    a = 2.0f,
-                    b = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = 2.0f,
-                    dy1 = 2.0f,
-                )
-                // h 0.34
-                horizontalLineToRelative(dx = 0.34f)
-                // M 20 8
-                moveTo(x = 20.0f, y = 8.0f)
-                // v 11
-                verticalLineToRelative(dy = 11.0f)
-                // a 2 2 0 0 1 -2 2
-                arcToRelative(
-                    a = 2.0f,
-                    b = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = true,
-                    dx1 = -2.0f,
-                    dy1 = 2.0f,
-                )
-                // h -0.34
-                horizontalLineToRelative(dx = -0.34f)
-                // M 9 18
-                moveTo(x = 9.0f, y = 18.0f)
-                // l 3 3
-                lineToRelative(dx = 3.0f, dy = 3.0f)
-                // l 3 -3
-                lineToRelative(dx = 3.0f, dy = -3.0f)
-                // m -3 -6
-                moveToRelative(dx = -3.0f, dy = -6.0f)
-                // v 9
-                verticalLineToRelative(dy = 9.0f)
             }
         }.build().also { _archiveArrowDown = it }
     }

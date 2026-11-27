@@ -20,17 +20,17 @@ val Lucide.ClipboardPaste: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M11 14 h10 M16 4 h2 a2 2 0 0 1 2 2 v1.34 M17 18 l4 -4 -4 -4
+            // M12 14 h8 M16 4 h2 a2 2 0 0 1 2 2 v2.37 M17 17 l3 -3 -3 -3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 11 14
-                moveTo(x = 11.0f, y = 14.0f)
-                // h 10
-                horizontalLineToRelative(dx = 10.0f)
+                // M 12 14
+                moveTo(x = 12.0f, y = 14.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
                 // M 16 4
                 moveTo(x = 16.0f, y = 4.0f)
                 // h 2
@@ -45,16 +45,16 @@ val Lucide.ClipboardPaste: ImageVector
                     dx1 = 2.0f,
                     dy1 = 2.0f,
                 )
-                // v 1.34
-                verticalLineToRelative(dy = 1.34f)
-                // M 17 18
-                moveTo(x = 17.0f, y = 18.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l -4 -4
-                lineToRelative(dx = -4.0f, dy = -4.0f)
+                // v 2.37
+                verticalLineToRelative(dy = 2.37f)
+                // M 17 17
+                moveTo(x = 17.0f, y = 17.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+                // l -3 -3
+                lineToRelative(dx = -3.0f, dy = -3.0f)
             }
-            // M8 4 H6 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 1.8 -1.11
+            // M8 4 H6 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2 -2 v-.37
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -89,16 +89,18 @@ val Lucide.ClipboardPaste: ImageVector
                 )
                 // h 12
                 horizontalLineToRelative(dx = 12.0f)
-                // a 2 2 0 0 0 1.8 -1.11
+                // a 2 2 0 0 0 2 -2
                 arcToRelative(
                     a = 2.0f,
                     b = 2.0f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = false,
-                    dx1 = 1.8f,
-                    dy1 = -1.11f,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
                 )
+                // v -0.37
+                verticalLineToRelative(dy = -0.37f)
             }
             // <rect width="8" height="4" rx="1.0" x="8.0" y="2.0" fill="none" stroke="#FF000000" stroke-width="2" stroke-line-join="round" stroke-line-cap="round" />
             path(

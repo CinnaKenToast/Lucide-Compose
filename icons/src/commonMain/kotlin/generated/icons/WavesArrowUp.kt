@@ -20,19 +20,19 @@ val Lucide.WavesArrowUp: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M12 2 v8 M2 15 c.6 .5 1.2 1 2.5 1 2.5 0 2.5 -2 5 -2 2.6 0 2.4 2 5 2 2.5 0 2.5 -2 5 -2 1.3 0 1.9 .5 2.5 1 M2 21 c.6 .5 1.2 1 2.5 1 2.5 0 2.5 -2 5 -2 2.6 0 2.4 2 5 2 2.5 0 2.5 -2 5 -2 1.3 0 1.9 .5 2.5 1 M8 6 l4 -4 4 4
+            // M12 3 v6 M2 14 c.6 .5 1.2 1 2.5 1 2.5 0 2.5 -2 5 -2 2.6 0 2.4 2 5 2 2.5 0 2.5 -2 5 -2 1.3 0 1.9 .5 2.5 1 M2 20 c.6 .5 1.2 1 2.5 1 2.5 0 2.5 -2 5 -2 2.6 0 2.4 2 5 2 2.5 0 2.5 -2 5 -2 1.3 0 1.9 .5 2.5 1 M9 6 l3 -3 3 3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 12 2
-                moveTo(x = 12.0f, y = 2.0f)
-                // v 8
-                verticalLineToRelative(dy = 8.0f)
-                // M 2 15
-                moveTo(x = 2.0f, y = 15.0f)
+                // M 12 3
+                moveTo(x = 12.0f, y = 3.0f)
+                // v 6
+                verticalLineToRelative(dy = 6.0f)
+                // M 2 14
+                moveTo(x = 2.0f, y = 14.0f)
                 // c 0.6 0.5 1.2 1 2.5 1
                 curveToRelative(
                     dx1 = 0.6f,
@@ -78,8 +78,8 @@ val Lucide.WavesArrowUp: ImageVector
                     dx3 = 2.5f,
                     dy3 = 1.0f,
                 )
-                // M 2 21
-                moveTo(x = 2.0f, y = 21.0f)
+                // M 2 20
+                moveTo(x = 2.0f, y = 20.0f)
                 // c 0.6 0.5 1.2 1 2.5 1
                 curveToRelative(
                     dx1 = 0.6f,
@@ -125,12 +125,12 @@ val Lucide.WavesArrowUp: ImageVector
                     dx3 = 2.5f,
                     dy3 = 1.0f,
                 )
-                // M 8 6
-                moveTo(x = 8.0f, y = 6.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l 4 4
-                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // M 9 6
+                moveTo(x = 9.0f, y = 6.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
             }
         }.build().also { _wavesArrowUp = it }
     }

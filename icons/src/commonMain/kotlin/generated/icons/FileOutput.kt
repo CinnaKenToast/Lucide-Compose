@@ -20,77 +20,7 @@ val Lucide.FileOutput: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M4.23 20.93 A2 2 0 0 0 6 22 h12 a2 2 0 0 0 2 -2 V8 a2.4 2.4 0 0 0 -.7 -1.7 l-3.6 -3.6 A2.4 2.4 0 0 0 14 2 H6 a2 2 0 0 0 -2 2 v3.13
-            path(
-                stroke = SolidColor(Color(0xFF000000)),
-                strokeLineCap = StrokeCap.Round,
-                strokeLineJoin = StrokeJoin.Round,
-                strokeLineWidth = 2.0f,
-            ) {
-                // M 4.23 20.93
-                moveTo(x = 4.23f, y = 20.93f)
-                // A 2 2 0 0 0 6 22
-                arcTo(
-                    horizontalEllipseRadius = 2.0f,
-                    verticalEllipseRadius = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    x1 = 6.0f,
-                    y1 = 22.0f,
-                )
-                // h 12
-                horizontalLineToRelative(dx = 12.0f)
-                // a 2 2 0 0 0 2 -2
-                arcToRelative(
-                    a = 2.0f,
-                    b = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = 2.0f,
-                    dy1 = -2.0f,
-                )
-                // V 8
-                verticalLineTo(y = 8.0f)
-                // a 2.4 2.4 0 0 0 -0.7 -1.7
-                arcToRelative(
-                    a = 2.4f,
-                    b = 2.4f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = -0.7f,
-                    dy1 = -1.7f,
-                )
-                // l -3.6 -3.6
-                lineToRelative(dx = -3.6f, dy = -3.6f)
-                // A 2.4 2.4 0 0 0 14 2
-                arcTo(
-                    horizontalEllipseRadius = 2.4f,
-                    verticalEllipseRadius = 2.4f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    x1 = 14.0f,
-                    y1 = 2.0f,
-                )
-                // H 6
-                horizontalLineTo(x = 6.0f)
-                // a 2 2 0 0 0 -2 2
-                arcToRelative(
-                    a = 2.0f,
-                    b = 2.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = -2.0f,
-                    dy1 = 2.0f,
-                )
-                // v 3.13
-                verticalLineToRelative(dy = 3.13f)
-            }
-            // M14 2 v5 a1 1 0 0 0 1 1 h5 M5 11 l-3 3 m3 3 -3 -3 h10
+            // M14 2 v5 a1 1 0 0 0 1 1 h5
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -113,16 +43,94 @@ val Lucide.FileOutput: ImageVector
                 )
                 // h 5
                 horizontalLineToRelative(dx = 5.0f)
-                // M 5 11
-                moveTo(x = 5.0f, y = 11.0f)
+            }
+            // M4 9.34 V4 a2 2 0 0 1 2 -2 h8 a2.4 2.4 0 0 1 1.7 .7 l3.6 3.6 A2.4 2.4 0 0 1 20 8 v12 a2 2 0 0 1 -2 2 H6 a2 2 0 0 1 -1.82 -1.17 M7 12 l-3 3
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 4 9.34
+                moveTo(x = 4.0f, y = 9.34f)
+                // V 4
+                verticalLineTo(y = 4.0f)
+                // a 2 2 0 0 1 2 -2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 2.0f,
+                    dy1 = -2.0f,
+                )
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
+                // a 2.4 2.4 0 0 1 1.7 0.7
+                arcToRelative(
+                    a = 2.4f,
+                    b = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 1.7f,
+                    dy1 = 0.7f,
+                )
+                // l 3.6 3.6
+                lineToRelative(dx = 3.6f, dy = 3.6f)
+                // A 2.4 2.4 0 0 1 20 8
+                arcTo(
+                    horizontalEllipseRadius = 2.4f,
+                    verticalEllipseRadius = 2.4f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    x1 = 20.0f,
+                    y1 = 8.0f,
+                )
+                // v 12
+                verticalLineToRelative(dy = 12.0f)
+                // a 2 2 0 0 1 -2 2
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -2.0f,
+                    dy1 = 2.0f,
+                )
+                // H 6
+                horizontalLineTo(x = 6.0f)
+                // a 2 2 0 0 1 -1.82 -1.17
+                arcToRelative(
+                    a = 2.0f,
+                    b = 2.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -1.82f,
+                    dy1 = -1.17f,
+                )
+                // M 7 12
+                moveTo(x = 7.0f, y = 12.0f)
                 // l -3 3
                 lineToRelative(dx = -3.0f, dy = 3.0f)
-                // m 3 3
-                moveToRelative(dx = 3.0f, dy = 3.0f)
+            }
+            // m7 18 -3 -3 h8
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 7 18
+                moveTo(x = 7.0f, y = 18.0f)
                 // l -3 -3
                 lineToRelative(dx = -3.0f, dy = -3.0f)
-                // h 10
-                horizontalLineToRelative(dx = 10.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
             }
         }.build().also { _fileOutput = it }
     }
