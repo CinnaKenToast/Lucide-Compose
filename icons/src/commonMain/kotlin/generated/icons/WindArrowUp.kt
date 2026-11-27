@@ -20,20 +20,20 @@ val Lucide.WindArrowUp: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M10 2 v8 m2.8 11.6 A2 2 0 1 0 14 18 H2 m15.5 -8 a2.5 2.5 0 1 1 2 4 H2 m4 -8 4 -4 4 4
+            // M11 3 v6 m1.8 11.6 A2 2 0 1 0 14 17 H2 m15.5 -8 a2.5 2.5 0 1 1 2 4 H2 m6 -7 3 -3 3 3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 10 2
-                moveTo(x = 10.0f, y = 2.0f)
-                // v 8
-                verticalLineToRelative(dy = 8.0f)
-                // m 2.8 11.6
-                moveToRelative(dx = 2.8f, dy = 11.6f)
-                // A 2 2 0 1 0 14 18
+                // M 11 3
+                moveTo(x = 11.0f, y = 3.0f)
+                // v 6
+                verticalLineToRelative(dy = 6.0f)
+                // m 1.8 11.6
+                moveToRelative(dx = 1.8f, dy = 11.6f)
+                // A 2 2 0 1 0 14 17
                 arcTo(
                     horizontalEllipseRadius = 2.0f,
                     verticalEllipseRadius = 2.0f,
@@ -41,7 +41,7 @@ val Lucide.WindArrowUp: ImageVector
                     isMoreThanHalf = true,
                     isPositiveArc = false,
                     x1 = 14.0f,
-                    y1 = 18.0f,
+                    y1 = 17.0f,
                 )
                 // H 2
                 horizontalLineTo(x = 2.0f)
@@ -59,12 +59,12 @@ val Lucide.WindArrowUp: ImageVector
                 )
                 // H 2
                 horizontalLineTo(x = 2.0f)
-                // m 4 -8
-                moveToRelative(dx = 4.0f, dy = -8.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l 4 4
-                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // m 6 -7
+                moveToRelative(dx = 6.0f, dy = -7.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
             }
         }.build().also { _windArrowUp = it }
     }

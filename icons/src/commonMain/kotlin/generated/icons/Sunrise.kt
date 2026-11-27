@@ -20,45 +20,19 @@ val Lucide.Sunrise: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M12 2 v8 m-7.07 .93 1.41 1.41 M2 18 h2 m16 0 h2 m-2.93 -7.07 -1.41 1.41 M22 22 H2 M8 6 l4 -4 4 4 m0 12 a4 4 0 0 0 -8 0
+            // M12 3 v6 m4 8 a4 4 0 0 0 -8 0 m11.07 -7.07 -1.41 1.41 M2 17 h2 m16 0 h2 m0 4 H2 M4.93 9.93 l1.41 1.41 M9 6 l3 -3 3 3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 12 2
-                moveTo(x = 12.0f, y = 2.0f)
-                // v 8
-                verticalLineToRelative(dy = 8.0f)
-                // m -7.07 0.93
-                moveToRelative(dx = -7.07f, dy = 0.93f)
-                // l 1.41 1.41
-                lineToRelative(dx = 1.41f, dy = 1.41f)
-                // M 2 18
-                moveTo(x = 2.0f, y = 18.0f)
-                // h 2
-                horizontalLineToRelative(dx = 2.0f)
-                // m 16 0
-                moveToRelative(dx = 16.0f, dy = 0.0f)
-                // h 2
-                horizontalLineToRelative(dx = 2.0f)
-                // m -2.93 -7.07
-                moveToRelative(dx = -2.93f, dy = -7.07f)
-                // l -1.41 1.41
-                lineToRelative(dx = -1.41f, dy = 1.41f)
-                // M 22 22
-                moveTo(x = 22.0f, y = 22.0f)
-                // H 2
-                horizontalLineTo(x = 2.0f)
-                // M 8 6
-                moveTo(x = 8.0f, y = 6.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l 4 4
-                lineToRelative(dx = 4.0f, dy = 4.0f)
-                // m 0 12
-                moveToRelative(dx = 0.0f, dy = 12.0f)
+                // M 12 3
+                moveTo(x = 12.0f, y = 3.0f)
+                // v 6
+                verticalLineToRelative(dy = 6.0f)
+                // m 4 8
+                moveToRelative(dx = 4.0f, dy = 8.0f)
                 // a 4 4 0 0 0 -8 0
                 arcToRelative(
                     a = 4.0f,
@@ -69,6 +43,32 @@ val Lucide.Sunrise: ImageVector
                     dx1 = -8.0f,
                     dy1 = 0.0f,
                 )
+                // m 11.07 -7.07
+                moveToRelative(dx = 11.07f, dy = -7.07f)
+                // l -1.41 1.41
+                lineToRelative(dx = -1.41f, dy = 1.41f)
+                // M 2 17
+                moveTo(x = 2.0f, y = 17.0f)
+                // h 2
+                horizontalLineToRelative(dx = 2.0f)
+                // m 16 0
+                moveToRelative(dx = 16.0f, dy = 0.0f)
+                // h 2
+                horizontalLineToRelative(dx = 2.0f)
+                // m 0 4
+                moveToRelative(dx = 0.0f, dy = 4.0f)
+                // H 2
+                horizontalLineTo(x = 2.0f)
+                // M 4.93 9.93
+                moveTo(x = 4.93f, y = 9.93f)
+                // l 1.41 1.41
+                lineToRelative(dx = 1.41f, dy = 1.41f)
+                // M 9 6
+                moveTo(x = 9.0f, y = 6.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
             }
         }.build().also { _sunrise = it }
     }

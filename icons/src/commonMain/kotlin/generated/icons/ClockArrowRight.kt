@@ -20,7 +20,7 @@ val Lucide.ClockArrowRight: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M12 6 v6 l2 1
+            // M12 6 v6 l2.42 1.21
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -31,46 +31,46 @@ val Lucide.ClockArrowRight: ImageVector
                 moveTo(x = 12.0f, y = 6.0f)
                 // v 6
                 verticalLineToRelative(dy = 6.0f)
-                // l 2 1
-                lineToRelative(dx = 2.0f, dy = 1.0f)
+                // l 2.42 1.21
+                lineToRelative(dx = 2.42f, dy = 1.21f)
             }
-            // M13.5 21.89 A10 10 0 1 1 22 12 m-8 6 h8
+            // M13.85 21.83 a10 10 0 1 1 8.07 -8.57
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 13.5 21.89
-                moveTo(x = 13.5f, y = 21.89f)
-                // A 10 10 0 1 1 22 12
-                arcTo(
-                    horizontalEllipseRadius = 10.0f,
-                    verticalEllipseRadius = 10.0f,
+                // M 13.85 21.83
+                moveTo(x = 13.85f, y = 21.83f)
+                // a 10 10 0 1 1 8.07 -8.57
+                arcToRelative(
+                    a = 10.0f,
+                    b = 10.0f,
                     theta = 0.0f,
                     isMoreThanHalf = true,
                     isPositiveArc = true,
-                    x1 = 22.0f,
-                    y1 = 12.0f,
+                    dx1 = 8.07f,
+                    dy1 = -8.57f,
                 )
-                // m -8 6
-                moveToRelative(dx = -8.0f, dy = 6.0f)
-                // h 8
-                horizontalLineToRelative(dx = 8.0f)
             }
-            // m18 22 4 -4 -4 -4
+            // m18 15 3 3 -3 3 m3 -3 h-6
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 18 22
-                moveTo(x = 18.0f, y = 22.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l -4 -4
-                lineToRelative(dx = -4.0f, dy = -4.0f)
+                // M 18 15
+                moveTo(x = 18.0f, y = 15.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
+                // l -3 3
+                lineToRelative(dx = -3.0f, dy = 3.0f)
+                // m 3 -3
+                moveToRelative(dx = 3.0f, dy = -3.0f)
+                // h -6
+                horizontalLineToRelative(dx = -6.0f)
             }
         }.build().also { _clockArrowRight = it }
     }

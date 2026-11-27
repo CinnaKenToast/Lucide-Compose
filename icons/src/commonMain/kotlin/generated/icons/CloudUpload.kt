@@ -20,7 +20,7 @@ val Lucide.CloudUpload: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M12 13 v8 m-8 -6.1 A7 7 0 1 1 15.71 8 h1.79 a4.5 4.5 0 0 1 2.5 8.24
+            // M12 13 v8 m-7 -4.25 A7 7 0 1 1 15.71 9 h1.79 a4.5 4.5 0 0 1 1.5 8.74
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -31,9 +31,9 @@ val Lucide.CloudUpload: ImageVector
                 moveTo(x = 12.0f, y = 13.0f)
                 // v 8
                 verticalLineToRelative(dy = 8.0f)
-                // m -8 -6.1
-                moveToRelative(dx = -8.0f, dy = -6.1f)
-                // A 7 7 0 1 1 15.71 8
+                // m -7 -4.25
+                moveToRelative(dx = -7.0f, dy = -4.25f)
+                // A 7 7 0 1 1 15.71 9
                 arcTo(
                     horizontalEllipseRadius = 7.0f,
                     verticalEllipseRadius = 7.0f,
@@ -41,34 +41,34 @@ val Lucide.CloudUpload: ImageVector
                     isMoreThanHalf = true,
                     isPositiveArc = true,
                     x1 = 15.71f,
-                    y1 = 8.0f,
+                    y1 = 9.0f,
                 )
                 // h 1.79
                 horizontalLineToRelative(dx = 1.79f)
-                // a 4.5 4.5 0 0 1 2.5 8.24
+                // a 4.5 4.5 0 0 1 1.5 8.74
                 arcToRelative(
                     a = 4.5f,
                     b = 4.5f,
                     theta = 0.0f,
                     isMoreThanHalf = false,
                     isPositiveArc = true,
-                    dx1 = 2.5f,
-                    dy1 = 8.24f,
+                    dx1 = 1.5f,
+                    dy1 = 8.74f,
                 )
             }
-            // m8 17 4 -4 4 4
+            // m9 16 3 -3 3 3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 8 17
-                moveTo(x = 8.0f, y = 17.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
-                // l 4 4
-                lineToRelative(dx = 4.0f, dy = 4.0f)
+                // M 9 16
+                moveTo(x = 9.0f, y = 16.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
             }
         }.build().also { _cloudUpload = it }
     }

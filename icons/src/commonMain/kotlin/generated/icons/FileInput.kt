@@ -20,7 +20,31 @@ val Lucide.FileInput: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // M4 11 V4 a2 2 0 0 1 2 -2 h8 a2.4 2.4 0 0 1 1.7 .7 l3.6 3.6 A2.4 2.4 0 0 1 20 8 v12 a2 2 0 0 1 -2 2 H6 a2 2 0 0 1 -2 -2 v-1
+            // M14 2 v5 a1 1 0 0 0 1 1 h5
+            path(
+                stroke = SolidColor(Color(0xFF000000)),
+                strokeLineCap = StrokeCap.Round,
+                strokeLineJoin = StrokeJoin.Round,
+                strokeLineWidth = 2.0f,
+            ) {
+                // M 14 2
+                moveTo(x = 14.0f, y = 2.0f)
+                // v 5
+                verticalLineToRelative(dy = 5.0f)
+                // a 1 1 0 0 0 1 1
+                arcToRelative(
+                    a = 1.0f,
+                    b = 1.0f,
+                    theta = 0.0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = false,
+                    dx1 = 1.0f,
+                    dy1 = 1.0f,
+                )
+                // h 5
+                horizontalLineToRelative(dx = 5.0f)
+            }
+            // M4 11 V4 a2 2 0 0 1 2 -2 h8 a2.4 2.4 0 0 1 1.7 .7 l3.6 3.6 A2.4 2.4 0 0 1 20 8 v12 a2 2 0 0 1 -2 2 H6 a2 2 0 0 1 -2 -2 v-1 m0 -4 h8
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
@@ -91,36 +115,20 @@ val Lucide.FileInput: ImageVector
                 )
                 // v -1
                 verticalLineToRelative(dy = -1.0f)
+                // m 0 -4
+                moveToRelative(dx = 0.0f, dy = -4.0f)
+                // h 8
+                horizontalLineToRelative(dx = 8.0f)
             }
-            // M14 2 v5 a1 1 0 0 0 1 1 h5 M2 15 h10 m-3 3 3 -3 -3 -3
+            // m9 18 3 -3 -3 -3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 14 2
-                moveTo(x = 14.0f, y = 2.0f)
-                // v 5
-                verticalLineToRelative(dy = 5.0f)
-                // a 1 1 0 0 0 1 1
-                arcToRelative(
-                    a = 1.0f,
-                    b = 1.0f,
-                    theta = 0.0f,
-                    isMoreThanHalf = false,
-                    isPositiveArc = false,
-                    dx1 = 1.0f,
-                    dy1 = 1.0f,
-                )
-                // h 5
-                horizontalLineToRelative(dx = 5.0f)
-                // M 2 15
-                moveTo(x = 2.0f, y = 15.0f)
-                // h 10
-                horizontalLineToRelative(dx = 10.0f)
-                // m -3 3
-                moveToRelative(dx = -3.0f, dy = 3.0f)
+                // M 9 18
+                moveTo(x = 9.0f, y = 18.0f)
                 // l 3 -3
                 lineToRelative(dx = 3.0f, dy = -3.0f)
                 // l -3 -3

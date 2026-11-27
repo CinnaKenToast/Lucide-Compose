@@ -20,37 +20,37 @@ val Lucide.CalendarArrowDown: ImageVector
             viewportWidth = 24.0f,
             viewportHeight = 24.0f,
         ).apply {
-            // m14 17 4 4 4 -4 M16 2 v3 m2 8 v8
+            // m15 18 3 3 v-6 M16 2 v3 m2 16 3 -3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 14 17
-                moveTo(x = 14.0f, y = 17.0f)
-                // l 4 4
-                lineToRelative(dx = 4.0f, dy = 4.0f)
-                // l 4 -4
-                lineToRelative(dx = 4.0f, dy = -4.0f)
+                // M 15 18
+                moveTo(x = 15.0f, y = 18.0f)
+                // l 3 3
+                lineToRelative(dx = 3.0f, dy = 3.0f)
+                // v -6
+                verticalLineToRelative(dy = -6.0f)
                 // M 16 2
                 moveTo(x = 16.0f, y = 2.0f)
                 // v 3
                 verticalLineToRelative(dy = 3.0f)
-                // m 2 8
-                moveToRelative(dx = 2.0f, dy = 8.0f)
-                // v 8
-                verticalLineToRelative(dy = 8.0f)
+                // m 2 16
+                moveToRelative(dx = 2.0f, dy = 16.0f)
+                // l 3 -3
+                lineToRelative(dx = 3.0f, dy = -3.0f)
             }
-            // M21 10.35 V5 a2 2 0 0 0 -2 -2 H5 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h7.34 M3 9 h18 M8 2 v3
+            // M21 12.34 V5 a2 2 0 0 0 -2 -2 H5 a2 2 0 0 0 -2 2 v14 a2 2 0 0 0 2 2 h7.37 M3 9 h18 M8 2 v3
             path(
                 stroke = SolidColor(Color(0xFF000000)),
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
                 strokeLineWidth = 2.0f,
             ) {
-                // M 21 10.35
-                moveTo(x = 21.0f, y = 10.35f)
+                // M 21 12.34
+                moveTo(x = 21.0f, y = 12.34f)
                 // V 5
                 verticalLineTo(y = 5.0f)
                 // a 2 2 0 0 0 -2 -2
@@ -87,8 +87,8 @@ val Lucide.CalendarArrowDown: ImageVector
                     dx1 = 2.0f,
                     dy1 = 2.0f,
                 )
-                // h 7.34
-                horizontalLineToRelative(dx = 7.34f)
+                // h 7.37
+                horizontalLineToRelative(dx = 7.37f)
                 // M 3 9
                 moveTo(x = 3.0f, y = 9.0f)
                 // h 18
